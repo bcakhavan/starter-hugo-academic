@@ -6,9 +6,9 @@
 # Appearance
 
 appearance:
-  theme_day: minimal
-  theme_night: minimal
-  font: minimal
+  theme_day: cornell_theme
+  theme_night: cornell_theme
+  font: cornell_theme
   font_size: L
 
 # SEO
