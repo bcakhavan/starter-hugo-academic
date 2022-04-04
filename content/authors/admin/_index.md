@@ -62,8 +62,6 @@ email: ""
 highlight_name: true
 ---
 
-Nelson Bighetti is a professor of artificial intelligence at the Stanford AI Lab. His research interests include distributed robotics, mobile computing and programmable matter. He leads the Robotic Neurobiology group, which develops self-reconfiguring robots, systems of self-organizing robots, and mobile sensor networks.
+Hi! I'm Bonnie, an incoming master's student at MIT studying operations researchengineering. I'm graduating from Cornell University in May 2022 with a degree in both computer science and operations research, and I'm very interested in the intersection of mathematics, computing, and social good. I currently work with professors {{< staticref "https://people.orie.cornell.edu/pfrazier/" "newtab" >}}Peter Frazier{{< /staticref >}}, Shane Henderson, and David Shomys on the Cornell COVID-19 Modeling Team, where we analyze campus data to help guide administrative decisions. 
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed neque elit, tristique placerat feugiat ac, facilisis vitae arcu. Proin eget egestas augue. Praesent ut sem nec arcu pellentesque aliquet. Duis dapibus diam vel metus tempus vulputate.
-
-{{< icon name="download" pack="fas" >}} Download my {{< staticref "uploads/demo_resume.pdf" "newtab" >}}resumé{{< /staticref >}}.
+{{< icon name="download" pack="fas" >}} Download my {{< staticref "uploads/resume.pdf" "newtab" >}}resumé{{< /staticref >}}.
