@@ -25,8 +25,8 @@ content:
       captcha: false
 
   # Contact details (edit or remove options as required)
-  email: test@example.org
-  phone: 888 888 88 88
+  email: bca44@cornell.edu
+  phone: 202 330 2121
 
 design:
   columns: '2'
