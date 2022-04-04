@@ -68,4 +68,6 @@ I've previously interned for various organizations, including {{< staticref "htt
 
 {{< icon name="download" pack="fas" >}} Download my {{< staticref "uploads/resume.pdf" "newtab" >}}resumé{{< /staticref >}}.
 
+Reach out to me at bca44 \[at\] cornell.edu. 
+
 
