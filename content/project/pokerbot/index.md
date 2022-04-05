@@ -9,7 +9,7 @@ tags:
 external_link: "https://github.com/st-tse/neuron_poker_bot"
 
 image:
-  caption: Photo by rawpixel on Unsplash
+  #caption: Photo by rawpixel on Unsplash
   focal_point: Smart
 
 #links:

@@ -10,7 +10,7 @@ tags:
 external_link: "https://github.com/VictorButoi/WordRL"
 
 image:
-  caption: Photo by rawpixel on Unsplash
+  #caption: Photo by rawpixel on Unsplash
   focal_point: Smart
 
 #links:

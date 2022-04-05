@@ -9,7 +9,7 @@ tags:
 external_link: "https://github.coecis.cornell.edu/bca44/cs3110_final_project"
 
 image:
-  caption: Photo by rawpixel on Unsplash
+  #caption: Photo by rawpixel on Unsplash
   focal_point: Smart
 
 #links:
