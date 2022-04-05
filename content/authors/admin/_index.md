@@ -14,7 +14,7 @@ organizations:
   url: https://orc.mit.edu/
 
 # Short bio (displayed in user profile at end of posts)
-bio: My research interests include distributed robotics, mobile computing and programmable matter.
+bio: My research interests include applied statitistics and human-centric systems and networks.
 
 # Interests to show in About widget
 interests:
