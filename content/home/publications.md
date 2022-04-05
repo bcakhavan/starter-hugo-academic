@@ -9,23 +9,14 @@ headless: true
 active: true
 
 # Order that this section appears on the page.
-weight: 90
+weight: 20
 
-title: Recent Publications
+title: Publications
 subtitle: ''
 
 content:
   # Filter on criteria
-  filters:
-    folders:
-      - publication
-    tag: ''
-    category: ''
-    publication_type: ''
-    author: ''
-    exclude_featured: false
-    exclude_future: false
-    exclude_past: false
+  page_type: publication
   # Choose how many pages you would like to display (0 = all pages)
   count: 0
   # Choose how many pages you would like to offset by
@@ -34,10 +25,10 @@ content:
   order: desc
 design:
   # Choose a view for the listings:
-  view: citation
-  columns: '2'
+  #Looked at Jiayue's website for this one
+  view: 4
 ---
 
-{{% callout note %}}
+<!-- {{% callout note %}}
 Quickly discover relevant content by [filtering publications](./publication/).
-{{% /callout %}}
+{{% /callout %}} -->
