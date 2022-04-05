@@ -4,6 +4,9 @@ title: "This section is being updated. Please return later for more information"
 # Authors
 # If you created a profile for a user (e.g. the default `admin` user), write the username (folder name) here 
 # and it will be replaced with their full name and linked to their profile.
+
+#https://github.com/jiayuewan/personal_website shows the right way to do this all
+
 authors:
 
 
