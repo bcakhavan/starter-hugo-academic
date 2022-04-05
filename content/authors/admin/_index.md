@@ -40,7 +40,7 @@ education:
 social:
 - icon: envelope
   icon_pack: fas
-  link: '/#contact'
+  link: mailto:bca44@cornell.edu
 - icon: github
   icon_pack: fab
   link: https://github.com/bcakhavan
