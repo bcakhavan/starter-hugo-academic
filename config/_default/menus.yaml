@@ -13,8 +13,8 @@ main:
   - name: Projects
     url: '#projects'
     weight: 30
-  - name: Experience
-    url: '#experience'
+  - name: Experiences
+    url: '#experiences'
     weight: 40
   - name: Resume
     url: uploads/resume.pdf
