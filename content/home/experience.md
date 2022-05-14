@@ -36,7 +36,7 @@ experience:
   - title: Summer Quant Intern (SPG, Commodities)
     company: Goldman Sachs
     company_url: ''
-    company_logo: org-gs
+    company_logo: 
     location: New York, NY
     date_start: '2021-06-06'
     date_end: '2021-08-13'
@@ -45,7 +45,7 @@ experience:
   - title: Software Development Intern (Voice)
     company: Bandwidth
     company_url: ''
-    company_logo: org_bw
+    company_logo: 
     location: Raleigh, NC
     date_start: '2020-05-30'
     date_end: '2020-08-10'
@@ -54,7 +54,7 @@ experience:
   - title: Engineering/ML Intern
     company: Vonage
     company_url: ''
-    company_logo: org-v
+    company_logo: 
     location: Holmdel, NJ
     date_start: '2019-05-30'
     date_end: '2019-07-20'
