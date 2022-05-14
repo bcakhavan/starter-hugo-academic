@@ -13,7 +13,7 @@ main:
   - name: Projects
     url: '#projects'
     weight: 30
-  - name: Experiences
+  - name: Work Experiences
     url: '#experiences'
     weight: 40
   - name: Resume
