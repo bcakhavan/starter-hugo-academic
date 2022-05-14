@@ -11,7 +11,7 @@ active: true
 # Order that this section appears on the page.
 weight: 40
 
-title: Work Experiences
+title: Experiences
 subtitle:
 
 # Date format for experience
