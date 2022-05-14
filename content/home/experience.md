@@ -47,9 +47,18 @@ experience:
     company_url: ''
     company_logo: org_bw
     location: Raleigh, NC
-    date_start: '2020-06-10'
+    date_start: '2020-05-30'
     date_end: '2020-08-10'
     description: Designed a low-latency database system for international least-cost telephone routing.
+
+  - title: Engineering/ML Intern
+    company: Vonage
+    company_url: ''
+    company_logo: org-v
+    location: Holmdel, NJ
+    date_start: '2019-05-30'
+    date_end: '2019-07-20'
+    description: Led efforts in cleaning data and training NLP classification models from customer service requests. 
 
 design:
   columns: '2'
