@@ -27,7 +27,7 @@ experience:
   - title: Summer Quant Intern (Commodities)
     company: Goldman Sachs
     company_url: ''
-    company_logo: org-gs
+    company_logo: 
     location: New York, NY
     date_start: '2022-06-05'
     date_end: ''
