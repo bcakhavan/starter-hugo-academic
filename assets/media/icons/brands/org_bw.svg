@@ -1,0 +1,1147 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head><meta charset="UTF-8"><script>if(navigator.userAgent.match(/MSIE|Internet Explorer/i)||navigator.userAgent.match(/Trident\/7\..*?rv:11/i)){var href=document.location.href;if(!href.match(/[?&]nowprocket/)){if(href.indexOf("?")==-1){if(href.indexOf("#")==-1){document.location.href=href+"?nowprocket=1"}else{document.location.href=href.replace("#","?nowprocket=1#")}}else{if(href.indexOf("#")==-1){document.location.href=href+"&nowprocket=1"}else{document.location.href=href.replace("#","&nowprocket=1#")}}}}</script><script>class RocketLazyLoadScripts{constructor(){this.triggerEvents=["keydown","mousedown","mousemove","touchmove","touchstart","touchend","wheel"],this.userEventHandler=this._triggerListener.bind(this),this.touchStartHandler=this._onTouchStart.bind(this),this.touchMoveHandler=this._onTouchMove.bind(this),this.touchEndHandler=this._onTouchEnd.bind(this),this.clickHandler=this._onClick.bind(this),this.interceptedClicks=[],window.addEventListener("pageshow",(e=>{this.persisted=e.persisted})),window.addEventListener("DOMContentLoaded",(()=>{this._preconnect3rdParties()})),this.delayedScripts={normal:[],async:[],defer:[]},this.allJQueries=[]}_addUserInteractionListener(e){document.hidden?e._triggerListener():(this.triggerEvents.forEach((t=>window.addEventListener(t,e.userEventHandler,{passive:!0}))),window.addEventListener("touchstart",e.touchStartHandler,{passive:!0}),window.addEventListener("mousedown",e.touchStartHandler),document.addEventListener("visibilitychange",e.userEventHandler))}_removeUserInteractionListener(){this.triggerEvents.forEach((e=>window.removeEventListener(e,this.userEventHandler,{passive:!0}))),document.removeEventListener("visibilitychange",this.userEventHandler)}_onTouchStart(e){"HTML"!==e.target.tagName&&(window.addEventListener("touchend",this.touchEndHandler),window.addEventListener("mouseup",this.touchEndHandler),window.addEventListener("touchmove",this.touchMoveHandler,{passive:!0}),window.addEventListener("mousemove",this.touchMoveHandler),e.target.addEventListener("click",this.clickHandler),this._renameDOMAttribute(e.target,"onclick","rocket-onclick"))}_onTouchMove(e){window.removeEventListener("touchend",this.touchEndHandler),window.removeEventListener("mouseup",this.touchEndHandler),window.removeEventListener("touchmove",this.touchMoveHandler,{passive:!0}),window.removeEventListener("mousemove",this.touchMoveHandler),e.target.removeEventListener("click",this.clickHandler),this._renameDOMAttribute(e.target,"rocket-onclick","onclick")}_onTouchEnd(e){window.removeEventListener("touchend",this.touchEndHandler),window.removeEventListener("mouseup",this.touchEndHandler),window.removeEventListener("touchmove",this.touchMoveHandler,{passive:!0}),window.removeEventListener("mousemove",this.touchMoveHandler)}_onClick(e){e.target.removeEventListener("click",this.clickHandler),this._renameDOMAttribute(e.target,"rocket-onclick","onclick"),this.interceptedClicks.push(e),e.preventDefault(),e.stopPropagation(),e.stopImmediatePropagation()}_replayClicks(){window.removeEventListener("touchstart",this.touchStartHandler,{passive:!0}),window.removeEventListener("mousedown",this.touchStartHandler),this.interceptedClicks.forEach((e=>{e.target.dispatchEvent(new MouseEvent("click",{view:e.view,bubbles:!0,cancelable:!0}))}))}_renameDOMAttribute(e,t,n){e.hasAttribute&&e.hasAttribute(t)&&(event.target.setAttribute(n,event.target.getAttribute(t)),event.target.removeAttribute(t))}_triggerListener(){this._removeUserInteractionListener(this),"loading"===document.readyState?document.addEventListener("DOMContentLoaded",this._loadEverythingNow.bind(this)):this._loadEverythingNow()}_preconnect3rdParties(){let e=[];document.querySelectorAll("script[type=rocketlazyloadscript]").forEach((t=>{if(t.hasAttribute("src")){const n=new URL(t.src).origin;n!==location.origin&&e.push({src:n,crossOrigin:t.crossOrigin||"module"===t.getAttribute("data-rocket-type")})}})),e=[...new Map(e.map((e=>[JSON.stringify(e),e]))).values()],this._batchInjectResourceHints(e,"preconnect")}async _loadEverythingNow(){this.lastBreath=Date.now(),this._delayEventListeners(),this._delayJQueryReady(this),this._handleDocumentWrite(),this._registerAllDelayedScripts(),this._preloadAllScripts(),await this._loadScriptsFromList(this.delayedScripts.normal),await this._loadScriptsFromList(this.delayedScripts.defer),await this._loadScriptsFromList(this.delayedScripts.async);try{await this._triggerDOMContentLoaded(),await this._triggerWindowLoad()}catch(e){}window.dispatchEvent(new Event("rocket-allScriptsLoaded")),this._replayClicks()}_registerAllDelayedScripts(){document.querySelectorAll("script[type=rocketlazyloadscript]").forEach((e=>{e.hasAttribute("src")?e.hasAttribute("async")&&!1!==e.async?this.delayedScripts.async.push(e):e.hasAttribute("defer")&&!1!==e.defer||"module"===e.getAttribute("data-rocket-type")?this.delayedScripts.defer.push(e):this.delayedScripts.normal.push(e):this.delayedScripts.normal.push(e)}))}async _transformScript(e){return await this._littleBreath(),new Promise((t=>{const n=document.createElement("script");[...e.attributes].forEach((e=>{let t=e.nodeName;"type"!==t&&("data-rocket-type"===t&&(t="type"),n.setAttribute(t,e.nodeValue))})),e.hasAttribute("src")?(n.addEventListener("load",t),n.addEventListener("error",t)):(n.text=e.text,t());try{e.parentNode.replaceChild(n,e)}catch(e){t()}}))}async _loadScriptsFromList(e){const t=e.shift();return t?(await this._transformScript(t),this._loadScriptsFromList(e)):Promise.resolve()}_preloadAllScripts(){this._batchInjectResourceHints([...this.delayedScripts.normal,...this.delayedScripts.defer,...this.delayedScripts.async],"preload")}_batchInjectResourceHints(e,t){var n=document.createDocumentFragment();e.forEach((e=>{if(e.src){const i=document.createElement("link");i.href=e.src,i.rel=t,"preconnect"!==t&&(i.as="script"),e.getAttribute&&"module"===e.getAttribute("data-rocket-type")&&(i.crossOrigin=!0),e.crossOrigin&&(i.crossOrigin=e.crossOrigin),n.appendChild(i)}})),document.head.appendChild(n)}_delayEventListeners(){let e={};function t(t,n){!function(t){function n(n){return e[t].eventsToRewrite.indexOf(n)>=0?"rocket-"+n:n}e[t]||(e[t]={originalFunctions:{add:t.addEventListener,remove:t.removeEventListener},eventsToRewrite:[]},t.addEventListener=function(){arguments[0]=n(arguments[0]),e[t].originalFunctions.add.apply(t,arguments)},t.removeEventListener=function(){arguments[0]=n(arguments[0]),e[t].originalFunctions.remove.apply(t,arguments)})}(t),e[t].eventsToRewrite.push(n)}function n(e,t){let n=e[t];Object.defineProperty(e,t,{get:()=>n||function(){},set(i){e["rocket"+t]=n=i}})}t(document,"DOMContentLoaded"),t(window,"DOMContentLoaded"),t(window,"load"),t(window,"pageshow"),t(document,"readystatechange"),n(document,"onreadystatechange"),n(window,"onload"),n(window,"onpageshow")}_delayJQueryReady(e){let t=window.jQuery;Object.defineProperty(window,"jQuery",{get:()=>t,set(n){if(n&&n.fn&&!e.allJQueries.includes(n)){n.fn.ready=n.fn.init.prototype.ready=function(t){e.domReadyFired?t.bind(document)(n):document.addEventListener("rocket-DOMContentLoaded",(()=>t.bind(document)(n)))};const t=n.fn.on;n.fn.on=n.fn.init.prototype.on=function(){if(this[0]===window){function e(e){return e.split(" ").map((e=>"load"===e||0===e.indexOf("load.")?"rocket-jquery-load":e)).join(" ")}"string"==typeof arguments[0]||arguments[0]instanceof String?arguments[0]=e(arguments[0]):"object"==typeof arguments[0]&&Object.keys(arguments[0]).forEach((t=>{delete Object.assign(arguments[0],{[e(t)]:arguments[0][t]})[t]}))}return t.apply(this,arguments),this},e.allJQueries.push(n)}t=n}})}async _triggerDOMContentLoaded(){this.domReadyFired=!0,await this._littleBreath(),document.dispatchEvent(new Event("rocket-DOMContentLoaded")),await this._littleBreath(),window.dispatchEvent(new Event("rocket-DOMContentLoaded")),await this._littleBreath(),document.dispatchEvent(new Event("rocket-readystatechange")),await this._littleBreath(),document.rocketonreadystatechange&&document.rocketonreadystatechange()}async _triggerWindowLoad(){await this._littleBreath(),window.dispatchEvent(new Event("rocket-load")),await this._littleBreath(),window.rocketonload&&window.rocketonload(),await this._littleBreath(),this.allJQueries.forEach((e=>e(window).trigger("rocket-jquery-load"))),await this._littleBreath();const e=new Event("rocket-pageshow");e.persisted=this.persisted,window.dispatchEvent(e),await this._littleBreath(),window.rocketonpageshow&&window.rocketonpageshow({persisted:this.persisted})}_handleDocumentWrite(){const e=new Map;document.write=document.writeln=function(t){const n=document.currentScript,i=document.createRange(),r=n.parentElement;let o=e.get(n);void 0===o&&(o=n.nextSibling,e.set(n,o));const s=document.createDocumentFragment();i.setStart(s,0),s.appendChild(i.createContextualFragment(t)),r.insertBefore(s,o)}}async _littleBreath(){Date.now()-this.lastBreath>45&&(await this._requestAnimFrame(),this.lastBreath=Date.now())}async _requestAnimFrame(){return document.hidden?new Promise((e=>setTimeout(e))):new Promise((e=>requestAnimationFrame(e)))}static run(){const e=new RocketLazyLoadScripts;e._addUserInteractionListener(e)}}RocketLazyLoadScripts.run();</script>
+
+	<!-- Google Tag Manager -->
+	<script type="rocketlazyloadscript">
+		dataLayer = [];
+	</script>
+	<script type="rocketlazyloadscript">
+		(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=!0;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f)})(window,document,'script','dataLayer','GTM-P2JT7Z')
+	</script>
+
+	<!-- OneTrust Cookies Consent Notice start -->
+	<script type="rocketlazyloadscript" src="https://cdn.cookielaw.org/consent/b3bbf8c6-1853-4b8c-8cfd-ac1b21bddf56/otSDKStub.js"  data-rocket-type="text/javascript" charset="UTF-8" data-domain-script="b3bbf8c6-1853-4b8c-8cfd-ac1b21bddf56" ></script>
+	<script type="rocketlazyloadscript" data-rocket-type="text/javascript">
+	function OptanonWrapper() {}
+	</script>
+	<!-- OneTrust Cookies Consent Notice end -->
+		
+	<!-- Bizible -->
+	<script type="text/plain" class="optanon-category-2" src="//cdn.bizible.com/scripts/bizible.js" async=""></script>
+
+	<!-- Meta Information -->
+	
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="profile" href="https://gmpg.org/xfn/11" />
+
+	<!-- WordPress Generated Code -->
+	<meta name='robots' content='index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1' />
+
+	<!-- This site is optimized with the Yoast SEO Premium plugin v18.4 (Yoast SEO v18.8) - https://yoast.com/wordpress/plugins/seo/ -->
+	<title>Bandwidth—The universal platform for global enterprise communications</title><link rel="stylesheet" href="https://www.bandwidth.com/wp-content/cache/min/1/018f18983d0af1e392f54494a39c0af3.css" media="all" data-minify="1" />
+	<meta name="description" content="Powered by a global network. Guided by unmatched expertise, so you can create exceptional experiences for customers worldwide." />
+	<link rel="canonical" href="https://www.bandwidth.com/" />
+	<meta property="og:locale" content="en_US" />
+	<meta property="og:type" content="website" />
+	<meta property="og:title" content="Bandwidth—The universal platform for global enterprise communications" />
+	<meta property="og:description" content="Powered by a global network. Guided by unmatched expertise, so you can create exceptional experiences for customers worldwide." />
+	<meta property="og:url" content="https://www.bandwidth.com/" />
+	<meta property="og:site_name" content="Bandwidth" />
+	<meta property="article:publisher" content="https://www.facebook.com/bandwidth" />
+	<meta property="article:modified_time" content="2022-05-04T18:04:51+00:00" />
+	<meta property="og:image" content="https://www.bandwidth.com/wp-content/uploads/bandwidth-social.png" />
+	<meta property="og:image:width" content="2000" />
+	<meta property="og:image:height" content="1600" />
+	<meta property="og:image:type" content="image/png" />
+	<meta name="twitter:card" content="summary_large_image" />
+	<meta name="twitter:title" content="Bandwidth—The universal platform for global enterprise communications" />
+	<meta name="twitter:description" content="Powered by a global network. Guided by unmatched expertise, so you can create exceptional experiences for customers worldwide." />
+	<meta name="twitter:site" content="@bandwidth" />
+	<meta name="twitter:label1" content="Est. reading time" />
+	<meta name="twitter:data1" content="1 minute" />
+	<script type="application/ld+json" class="yoast-schema-graph">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://www.bandwidth.com/#organization","name":"Bandwidth","url":"https://www.bandwidth.com/","sameAs":["https://www.facebook.com/bandwidth","https://www.linkedin.com/company/bandwidth-inc/","https://www.youtube.com/bandwidth","https://twitter.com/bandwidth"],"logo":{"@type":"ImageObject","inLanguage":"en-US","@id":"https://www.bandwidth.com/#/schema/logo/image/","url":"https://www.bandwidth.com/wp-content/uploads/bandwidth-logo.svg","contentUrl":"https://www.bandwidth.com/wp-content/uploads/bandwidth-logo.svg","width":"1024","height":"1024","caption":"Bandwidth"},"image":{"@id":"https://www.bandwidth.com/#/schema/logo/image/"}},{"@type":"WebSite","@id":"https://www.bandwidth.com/#website","url":"https://www.bandwidth.com/","name":"Bandwidth","description":"APIs for Voice, Messaging and 911","publisher":{"@id":"https://www.bandwidth.com/#organization"},"potentialAction":[{"@type":"SearchAction","target":{"@type":"EntryPoint","urlTemplate":"https://www.bandwidth.com/?s={search_term_string}"},"query-input":"required name=search_term_string"}],"inLanguage":"en-US"},{"@type":"WebPage","@id":"https://www.bandwidth.com/#webpage","url":"https://www.bandwidth.com/","name":"Bandwidth—The universal platform for global enterprise communications","isPartOf":{"@id":"https://www.bandwidth.com/#website"},"about":{"@id":"https://www.bandwidth.com/#organization"},"datePublished":"2018-10-22T21:56:18+00:00","dateModified":"2022-05-04T18:04:51+00:00","description":"Powered by a global network. Guided by unmatched expertise, so you can create exceptional experiences for customers worldwide.","breadcrumb":{"@id":"https://www.bandwidth.com/#breadcrumb"},"inLanguage":"en-US","potentialAction":[{"@type":"ReadAction","target":["https://www.bandwidth.com/"]}]},{"@type":"BreadcrumbList","@id":"https://www.bandwidth.com/#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Home"}]}]}</script>
+	<meta name="msvalidate.01" content="0E7091DA1B7F1C7ECA34CE533781E0CD" />
+	<meta name="google-site-verification" content="kzdkdGtVrlsW6dP6Y1LihWt_w65CUNQ7AaVQbOMdAUU" />
+	<!-- / Yoast SEO Premium plugin. -->
+
+
+<link rel='dns-prefetch' href='//cdnjs.cloudflare.com' />
+<link rel='dns-prefetch' href='//unpkg.com' />
+<link rel='dns-prefetch' href='//www.google.com' />
+
+<style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 0.07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+	
+<style id='global-styles-inline-css' type='text/css'>
+body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: #abb8c3;--wp--preset--color--white: #ffffff;--wp--preset--color--pale-pink: #f78da7;--wp--preset--color--vivid-red: #cf2e2e;--wp--preset--color--luminous-vivid-orange: #ff6900;--wp--preset--color--luminous-vivid-amber: #fcb900;--wp--preset--color--light-green-cyan: #7bdcb5;--wp--preset--color--vivid-green-cyan: #00d084;--wp--preset--color--pale-cyan-blue: #8ed1fc;--wp--preset--color--vivid-cyan-blue: #0693e3;--wp--preset--color--vivid-purple: #9b51e0;--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg,rgba(6,147,227,1) 0%,rgb(155,81,224) 100%);--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg,rgb(122,220,180) 0%,rgb(0,208,130) 100%);--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg,rgba(252,185,0,1) 0%,rgba(255,105,0,1) 100%);--wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg,rgba(255,105,0,1) 0%,rgb(207,46,46) 100%);--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg,rgb(238,238,238) 0%,rgb(169,184,195) 100%);--wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(135deg,rgb(74,234,220) 0%,rgb(151,120,209) 20%,rgb(207,42,186) 40%,rgb(238,44,130) 60%,rgb(251,105,98) 80%,rgb(254,248,76) 100%);--wp--preset--gradient--blush-light-purple: linear-gradient(135deg,rgb(255,206,236) 0%,rgb(152,150,240) 100%);--wp--preset--gradient--blush-bordeaux: linear-gradient(135deg,rgb(254,205,165) 0%,rgb(254,45,45) 50%,rgb(107,0,62) 100%);--wp--preset--gradient--luminous-dusk: linear-gradient(135deg,rgb(255,203,112) 0%,rgb(199,81,192) 50%,rgb(65,88,208) 100%);--wp--preset--gradient--pale-ocean: linear-gradient(135deg,rgb(255,245,203) 0%,rgb(182,227,212) 50%,rgb(51,167,181) 100%);--wp--preset--gradient--electric-grass: linear-gradient(135deg,rgb(202,248,128) 0%,rgb(113,206,126) 100%);--wp--preset--gradient--midnight: linear-gradient(135deg,rgb(2,3,129) 0%,rgb(40,116,252) 100%);--wp--preset--duotone--dark-grayscale: url('#wp-duotone-dark-grayscale');--wp--preset--duotone--grayscale: url('#wp-duotone-grayscale');--wp--preset--duotone--purple-yellow: url('#wp-duotone-purple-yellow');--wp--preset--duotone--blue-red: url('#wp-duotone-blue-red');--wp--preset--duotone--midnight: url('#wp-duotone-midnight');--wp--preset--duotone--magenta-yellow: url('#wp-duotone-magenta-yellow');--wp--preset--duotone--purple-green: url('#wp-duotone-purple-green');--wp--preset--duotone--blue-orange: url('#wp-duotone-blue-orange');--wp--preset--font-size--small: 13px;--wp--preset--font-size--medium: 20px;--wp--preset--font-size--large: 36px;--wp--preset--font-size--x-large: 42px;}.has-black-color{color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-color{color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-color{color: var(--wp--preset--color--white) !important;}.has-pale-pink-color{color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-color{color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-color{color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-color{color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-color{color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-color{color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-color{color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-color{color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-color{color: var(--wp--preset--color--vivid-purple) !important;}.has-black-background-color{background-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-background-color{background-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-background-color{background-color: var(--wp--preset--color--white) !important;}.has-pale-pink-background-color{background-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-background-color{background-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-background-color{background-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-background-color{background-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-background-color{background-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-background-color{background-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-background-color{background-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-background-color{background-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-background-color{background-color: var(--wp--preset--color--vivid-purple) !important;}.has-black-border-color{border-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-border-color{border-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-border-color{border-color: var(--wp--preset--color--white) !important;}.has-pale-pink-border-color{border-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-border-color{border-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-border-color{border-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-border-color{border-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-border-color{border-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-border-color{border-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-border-color{border-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-border-color{border-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-border-color{border-color: var(--wp--preset--color--vivid-purple) !important;}.has-vivid-cyan-blue-to-vivid-purple-gradient-background{background: var(--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple) !important;}.has-light-green-cyan-to-vivid-green-cyan-gradient-background{background: var(--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan) !important;}.has-luminous-vivid-amber-to-luminous-vivid-orange-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange) !important;}.has-luminous-vivid-orange-to-vivid-red-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-orange-to-vivid-red) !important;}.has-very-light-gray-to-cyan-bluish-gray-gradient-background{background: var(--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray) !important;}.has-cool-to-warm-spectrum-gradient-background{background: var(--wp--preset--gradient--cool-to-warm-spectrum) !important;}.has-blush-light-purple-gradient-background{background: var(--wp--preset--gradient--blush-light-purple) !important;}.has-blush-bordeaux-gradient-background{background: var(--wp--preset--gradient--blush-bordeaux) !important;}.has-luminous-dusk-gradient-background{background: var(--wp--preset--gradient--luminous-dusk) !important;}.has-pale-ocean-gradient-background{background: var(--wp--preset--gradient--pale-ocean) !important;}.has-electric-grass-gradient-background{background: var(--wp--preset--gradient--electric-grass) !important;}.has-midnight-gradient-background{background: var(--wp--preset--gradient--midnight) !important;}.has-small-font-size{font-size: var(--wp--preset--font-size--small) !important;}.has-medium-font-size{font-size: var(--wp--preset--font-size--medium) !important;}.has-large-font-size{font-size: var(--wp--preset--font-size--large) !important;}.has-x-large-font-size{font-size: var(--wp--preset--font-size--x-large) !important;}
+</style>
+
+
+
+
+
+
+
+
+<script type='text/javascript' src='https://www.bandwidth.com/wp-includes/js/jquery/jquery.min.js?ver=3.6.0' id='jquery-core-js'></script>
+<script type='text/javascript' src='https://www.bandwidth.com/wp-includes/js/jquery/jquery-migrate.min.js?ver=3.3.2' id='jquery-migrate-js'></script>
+<script type='text/javascript' src='https://www.bandwidth.com/wp-content/plugins/featured-video-plus/js/jquery.fitvids.min.js?ver=master-2015-08' id='jquery.fitvids-js'></script>
+<script type='text/javascript' id='fvp-frontend-js-extra'>
+/* <![CDATA[ */
+var fvpdata = {"ajaxurl":"https:\/\/www.bandwidth.com\/wp-admin\/admin-ajax.php","nonce":"56e6447d77","fitvids":"1","dynamic":"","overlay":"","opacity":"0.75","color":"b","width":"640"};
+/* ]]> */
+</script>
+<script type="rocketlazyloadscript" data-rocket-type='text/javascript' src='https://www.bandwidth.com/wp-content/plugins/featured-video-plus/js/frontend.min.js?ver=2.3.3' id='fvp-frontend-js'></script>
+<script type="rocketlazyloadscript" data-rocket-type='text/javascript' src='https://www.bandwidth.com/wp-content/plugins/wp-user-avatar/assets/flatpickr/flatpickr.min.js?ver=5.9.3' id='ppress-flatpickr-js'></script>
+<script type="rocketlazyloadscript" data-rocket-type='text/javascript' src='https://www.bandwidth.com/wp-content/plugins/wp-user-avatar/assets/select2/select2.min.js?ver=5.9.3' id='ppress-select2-js'></script>
+<script type="rocketlazyloadscript" data-rocket-type='text/javascript' src='//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/highlight.min.js?ver=9.15.6' id='highlight-js-js'></script>
+<script type="rocketlazyloadscript" data-rocket-type='text/javascript' src='https://www.bandwidth.com/wp-content/themes/bandwidth/js/velocity.min.js?ver=1' id='velocity-js'></script>
+<script type="rocketlazyloadscript" data-rocket-type='text/javascript' src='https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js?ver=1' id='lottie-script-js'></script>
+<script type="rocketlazyloadscript" data-rocket-type='text/javascript' src='https://www.bandwidth.com/wp-content/themes/bandwidth/js/lottie-interactivity.min.js?ver=1' id='lottie-interactivity-js'></script>
+<link rel="https://api.w.org/" href="https://www.bandwidth.com/wp-json/" /><link rel="alternate" type="application/json" href="https://www.bandwidth.com/wp-json/wp/v2/pages/167019" /><link rel="wlwmanifest" type="application/wlwmanifest+xml" href="https://www.bandwidth.com/wp-includes/wlwmanifest.xml" /> 
+
+<!-- Dynamic Widgets by QURL loaded - http://www.dynamic-widgets.com //-->
+<link rel="icon" href="https://www.bandwidth.com/wp-content/uploads/cropped-bandwidth-icon-1-32x32.png" sizes="32x32" />
+<link rel="icon" href="https://www.bandwidth.com/wp-content/uploads/cropped-bandwidth-icon-1-192x192.png" sizes="192x192" />
+<link rel="apple-touch-icon" href="https://www.bandwidth.com/wp-content/uploads/cropped-bandwidth-icon-1-180x180.png" />
+<meta name="msapplication-TileImage" content="https://www.bandwidth.com/wp-content/uploads/cropped-bandwidth-icon-1-270x270.png" />
+
+	<!-- Start VWO Smartcode -->
+	<script type="rocketlazyloadscript" data-rocket-type="text/javascript" src="https://dev.visualwebsiteoptimizer.com/lib/345901.js"></script>
+	<!-- End VWO Smartcode -->
+
+</head>
+
+<body class="home page-template-default page page-id-167019" >
+	<!-- Google Tag Manager (noscript) -->
+	<noscript>
+		<iframe src="https://www.googletagmanager.com/ns.html?id=GTM-P2JT7Z" height="0" width="0" style="display:none;visibility:hidden"></iframe>
+	</noscript>
+
+	<!-- Skip Navigation Link -->
+	<a class="screen-reader-text" href="#main-content">Skip to main content</a>
+
+	<!-- Site Wrapper -->
+	<div class="site-wrapper ">
+
+		
+		<header class="header fixed light no-gradient home" id="header">
+
+			<div class="header-wrapper">
+				<nav class="header-utility blue">
+					<div class="header-utility-inner">
+						<!-- Announcement Link -->
+																		<div class="header-announcement">
+														<a class="header-announcement-link" href="https://www.bandwidth.com/newsroom/bandwidth-announces-integration-with-pindrop-to-add-out-of-the-box-voice-authentication-for-enterprise-contact-center-move-to-the-cloud/">
+
+								<span class="header-announcement-flag">
+									Announcement								</span>
+								<span class="header-announcement-message">
+									Integration with Pindrop — a voice authentication integration for enterprise contact centers								</span>
+							</a>
+													</div>
+						
+						<div class="header-callouts">
+
+							<!-- Call Link -->
+							<div class="header-call">
+																								<a class="header-call-link" href="tel:+18008085150">
+									<span class="header-call-link-label">
+										+1 800 808 5150									</span>
+								</a>
+							</div>
+
+							<!-- Support Link -->
+							<div class="header-support">
+																																									<a class="header-support-link" href="https://www.bandwidth.com/support/" target="_self">
+																	<span class="header-support-link-label">
+										Support									</span>
+								</a>
+							</div>
+
+							<!-- Log In Link -->
+							<div class="header-log-in">
+																																									<a class="header-log-in-link" href="https://www.bandwidth.com/login/" target="_self">
+																	<span class="header-log-in-link-label">
+										Log In									</span>
+								</a>
+							</div>
+
+
+							<!-- Search -->
+							<div class="header-search">
+								<a class="header-search-link" href="/search/">
+									<span class="hidden-link-text">Search</span>
+									<svg class="header-search-open-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 26 26">
+										<path class="header-search-open-path" d="M 10 0.1875 C 4.578125 0.1875 0.1875 4.578125 0.1875 10 C 0.1875 15.421875 4.578125 19.8125 10 19.8125 C 12.289063 19.8125 14.394531 19.003906 16.0625 17.6875 L 16.9375 18.5625 C 16.570313 19.253906 16.699219 20.136719 17.28125 20.71875 L 21.875 25.34375 C 22.589844 26.058594 23.753906 26.058594 24.46875 25.34375 L 25.34375 24.46875 C 26.058594 23.753906 26.058594 22.589844 25.34375 21.875 L 20.71875 17.28125 C 20.132813 16.695313 19.253906 16.59375 18.5625 16.96875 L 17.6875 16.09375 C 19.011719 14.421875 19.8125 12.300781 19.8125 10 C 19.8125 4.578125 15.421875 0.1875 10 0.1875 Z M 10 2 C 14.417969 2 18 5.582031 18 10 C 18 14.417969 14.417969 18 10 18 C 5.582031 18 2 14.417969 2 10 C 2 5.582031 5.582031 2 10 2 Z M 4.9375 7.46875 C 4.421875 8.304688 4.125 9.289063 4.125 10.34375 C 4.125 13.371094 6.566406 15.8125 9.59375 15.8125 C 10.761719 15.8125 11.859375 15.433594 12.75 14.8125 C 12.511719 14.839844 12.246094 14.84375 12 14.84375 C 8.085938 14.84375 4.9375 11.695313 4.9375 7.78125 C 4.9375 7.675781 4.933594 7.574219 4.9375 7.46875 Z "/>
+									</svg>
+									<svg class="header-search-close-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 26 26">
+										<path class="header-search-close-path" d="M 6.65625 4 C 6.367188 4 6.105469 4.113281 5.90625 4.3125 L 4.3125 5.90625 C 3.914063 6.304688 3.914063 7 4.3125 7.5 L 9.8125 13 L 4.3125 18.5 C 3.914063 19 3.914063 19.695313 4.3125 20.09375 L 5.90625 21.6875 C 6.40625 22.085938 7.101563 22.085938 7.5 21.6875 L 13 16.1875 L 18.5 21.6875 C 19 22.085938 19.695313 22.085938 20.09375 21.6875 L 21.6875 20.09375 C 22.085938 19.59375 22.085938 18.898438 21.6875 18.5 L 16.1875 13 L 21.6875 7.5 C 22.085938 7 22.085938 6.304688 21.6875 5.90625 L 20.09375 4.3125 C 19.59375 3.914063 18.898438 3.914063 18.5 4.3125 L 13 9.8125 L 7.5 4.3125 C 7.25 4.113281 6.945313 4 6.65625 4 Z "/>
+									</svg>
+								</a>
+								<div class="header-search-form">
+									<form role="search" method="get" class="search-form" action="https://www.bandwidth.com/">
+				<label>
+					<span class="screen-reader-text">Search for:</span>
+					<input type="search" class="search-field" placeholder="Search &hellip;" value="" name="s" />
+				</label>
+				<input type="submit" class="search-submit" value="Search" />
+			</form>								</div>
+							</div>
+						</div>
+					</div><!-- .header-callouts -->
+				</nav>
+				<nav class="header-content">
+
+					<!-- Logo -->
+											<a class="header-logo-link" href="https://www.bandwidth.com/" aria-current="page">
+											<span class="hidden-link-text">Bandwidth</span>
+						<svg class="header-logo-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 189 40" height="30">
+							<path class="header-logo-path text" d="M52.53,14.57A7.46,7.46,0,0,0,47.09,17v-10H45.48v22a14.53,14.53,0,0,0,5.35,1.13A8.35,8.35,0,0,0,57,27.94a8.06,8.06,0,0,0,2.31-6,7.5,7.5,0,0,0-1.89-5.29A6.27,6.27,0,0,0,52.53,14.57Zm3.09,12.19a6.6,6.6,0,0,1-4.83,1.88,10.42,10.42,0,0,1-3.7-.71V18.82q2.55-2.91,5.25-2.91a4.7,4.7,0,0,1,3.72,1.72A6.49,6.49,0,0,1,57.54,22,6.34,6.34,0,0,1,55.62,26.76ZM85.68,14.57a5.7,5.7,0,0,0-5,2.91h-.07V14.86H79V29.91h1.61V19.36q1.94-3.22,4.94-3.22,4.1,0,4.1,5.2v8.57h1.61V20.74a6.37,6.37,0,0,0-1.53-4.53A5.31,5.31,0,0,0,85.68,14.57Zm53.77,15.34h1.62v-15h-1.62Zm0-20h1.62V7.05h-1.62Zm48,6.33a5.3,5.3,0,0,0-4.08-1.64,5.7,5.7,0,0,0-5,2.91h-.07V7.06h-1.6V29.91h1.6V19.36c1.34-2.15,3-3.22,4.94-3.22,2.74,0,4.1,1.73,4.1,5.2v8.57H189V20.7A6.32,6.32,0,0,0,187.47,16.21ZM73.35,28.59c-.24,0-.36-.26-.36-.77V18.5a3.42,3.42,0,0,0-1.33-2.92,5.43,5.43,0,0,0-3.38-1,9.23,9.23,0,0,0-4.87,1.6v1.65A7.77,7.77,0,0,1,68,15.91q3.35,0,3.35,3.08V20.9a13.66,13.66,0,0,0-6.52,1.63,4.35,4.35,0,0,0-2.28,3.87,3.59,3.59,0,0,0,1.18,2.69,4,4,0,0,0,2.89,1.12,7.65,7.65,0,0,0,4.73-1.87,4.16,4.16,0,0,0,.31,1.5.81.81,0,0,0,.74.37h.06a7.23,7.23,0,0,0,3-.77V27.89a7.7,7.7,0,0,1-2.16.7Zm-2-1.65a6.39,6.39,0,0,1-4.2,1.94A3.2,3.2,0,0,1,65,28.16a2.25,2.25,0,0,1-.85-1.76,3.52,3.52,0,0,1,2-3.07,9.39,9.39,0,0,1,5.15-1.09Zm59.33.55h0a2.29,2.29,0,0,1-.59,1.14,2.38,2.38,0,0,1-.6-1.12L126,17c-.59-1.78-1.43-2.16-2-2.16s-1.43.38-2,2.16l-3.5,10.48a2.38,2.38,0,0,1-.6,1.12,2.39,2.39,0,0,1-.59-1.14h0l-3.92-12.62h-1.57l4.06,13.07h0c.57,1.82,1.4,2.21,2,2.22h0c.6,0,1.43-.38,2-2.17l3.5-10.48a2.25,2.25,0,0,1,.61-1.12h0a2.38,2.38,0,0,1,.6,1.12L128.08,28c.6,1.79,1.43,2.17,2,2.17h0c.61,0,1.44-.4,2-2.22h0l4.06-13.07h-1.56ZM168,28a7.14,7.14,0,0,1-.36-2.84V16.17h4.24V14.86h-4.24v-5s-1.61,0-1.61,2.11v2.87H162v1.31h4.07V27a2.93,2.93,0,0,0,1,2.36,3.74,3.74,0,0,0,2.49.85,7.17,7.17,0,0,0,3.12-.77V27.9a6.72,6.72,0,0,1-2.76.74C168.9,28.64,168.27,28.41,168,28ZM107,15.8a10,10,0,0,0-4.47-1.21,7.33,7.33,0,0,0-5.45,2.23A7.65,7.65,0,0,0,94.9,22.4,7.68,7.68,0,0,0,97.1,28a7.27,7.27,0,0,0,5.42,2.26A7.57,7.57,0,0,0,107,28.76v1.18h1.62V7.08H107Zm0,11.49a7.08,7.08,0,0,1-4.07,1.37,6.08,6.08,0,0,1-4.51-1.81A6.17,6.17,0,0,1,96.6,22.3a6.07,6.07,0,0,1,1.69-4.41,5.77,5.77,0,0,1,4.3-1.73,8,8,0,0,1,4.4,1.41ZM157.28,15.8a10,10,0,0,0-4.46-1.21,7.31,7.31,0,0,0-5.45,2.23,7.65,7.65,0,0,0-2.18,5.58A7.69,7.69,0,0,0,147.4,28a7.27,7.27,0,0,0,5.42,2.26,7.54,7.54,0,0,0,4.46-1.47v1.18h1.63V7.08h-1.63Zm0,11.49a7.06,7.06,0,0,1-4.07,1.37,6.11,6.11,0,0,1-4.51-1.81,6.2,6.2,0,0,1-1.8-4.55,6,6,0,0,1,1.69-4.41,5.76,5.76,0,0,1,4.3-1.73,8,8,0,0,1,4.39,1.41Z" />
+							<path class="header-logo-path icon" d="M27.18,10.13c-1.4-.3-1.56.43-1,1.76,3.17,7,.35,13.83-2.67,15.53a3.15,3.15,0,0,1-.08-.69c-.36-3.32-1.62-6.21-2.47-6.21-.68,0-.26,2.84-.44,5.35-1.12-.66-1.8-1.13-3-.92-1.71.3-4,3.93-4.07,3.41-.68-4.2.95-10.66,3.21-11.35.35-.14,1,.4,2.34.91,1.07.41.94-.66.45-1.06A5.19,5.19,0,0,0,14,16.47c-3.4,1.66-4.94,9.22-3.11,12.31a4.79,4.79,0,0,0,3.41,2.36c2.28.26,3-.22,4.81-2.47a2.17,2.17,0,0,0,.87.42c-1.5,4.66-7.11,8.59-8.32,7.92-5.88-4-4.25-16.79-.1-28a63.24,63.24,0,0,0,2-6.23c.62-3-3.2-3.62-5.82-1.4C5.83,3,4,6.72,2.51,11.09-2.24,25-.22,36.7,8.28,39.25c9.78,2.92,14.44-3.18,15.16-9.31a11.67,11.67,0,0,0,1.8.09c3-.06,7.33-1.62,8.61-8.24C34.82,16.79,31.61,11,27.18,10.13Z" />
+						</svg>
+					</a>
+
+					<!-- Mobile Menu Open Link -->
+					<a class="header-navigation-open-link" href="#navigation">
+						<span class="hidden-link-text">Open Menu</span>
+						<svg class="header-navigation-open-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" href="#navigation" height="24" width="24">
+							<path class="header-navigation-open-path" d="M 3 5 A 1.0001 1.0001 0 1 0 3 7 L 21 7 A 1.0001 1.0001 0 1 0 21 5 L 3 5 z M 3 11 A 1.0001 1.0001 0 1 0 3 13 L 21 13 A 1.0001 1.0001 0 1 0 21 11 L 3 11 z M 3 17 A 1.0001 1.0001 0 1 0 3 19 L 21 19 A 1.0001 1.0001 0 1 0 21 17 L 3 17 z" />
+						</svg>
+					</a>
+
+					<!-- Navigation Items -->
+					<div class="header-navigation header-home">
+
+						<!-- Mobile Menu Close Link -->
+						<a class="header-navigation-close-link" href="#header">
+							<span class="hidden-link-text">Close Menu</span>
+							<svg class="header-navigation-close-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 26 26">
+								<path class="header-navigation-close-path" d="M 6.65625 4 C 6.367188 4 6.105469 4.113281 5.90625 4.3125 L 4.3125 5.90625 C 3.914063 6.304688 3.914063 7 4.3125 7.5 L 9.8125 13 L 4.3125 18.5 C 3.914063 19 3.914063 19.695313 4.3125 20.09375 L 5.90625 21.6875 C 6.40625 22.085938 7.101563 22.085938 7.5 21.6875 L 13 16.1875 L 18.5 21.6875 C 19 22.085938 19.695313 22.085938 20.09375 21.6875 L 21.6875 20.09375 C 22.085938 19.59375 22.085938 18.898438 21.6875 18.5 L 16.1875 13 L 21.6875 7.5 C 22.085938 7 22.085938 6.304688 21.6875 5.90625 L 20.09375 4.3125 C 19.59375 3.914063 18.898438 3.914063 18.5 4.3125 L 13 9.8125 L 7.5 4.3125 C 7.25 4.113281 6.945313 4 6.65625 4 Z "/>
+							</svg>
+						</a>
+
+
+						<div class="header-navigation-inner-wrapper">
+							<!-- Header Menu -->
+															<ul id="menu-header-menu" class="header-menu"><li id="menu-item-188653" class="wide nav-products menu-item menu-item-type-post_type_archive menu-item-object-product menu-item-has-children menu-item-188653"><a href="https://www.bandwidth.com/products/">Products</a><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 26 26"><path d="M 13 15.40625 L 21.765625 6.820313 C 22.15625 6.4375 22.78125 6.441406 23.171875 6.828125 L 24.707031 8.363281 C 25.097656 8.757813 25.097656 9.390625 24.703125 9.78125 L 13.707031 20.707031 C 13.511719 20.902344 13.257813 21 13 21 C 12.742188 21 12.488281 20.902344 12.292969 20.707031 L 1.296875 9.78125 C 0.902344 9.390625 0.902344 8.757813 1.292969 8.363281 L 2.828125 6.828125 C 3.21875 6.441406 3.84375 6.4375 4.234375 6.820313 Z "/></svg>
+<ul class="sub-menu">
+	<li id="menu-item-188654" class="menu-item menu-item-type-post_type menu-item-object-product menu-item-has-children menu-item-188654"><a href="https://www.bandwidth.com/communication-apis/" class="menu-image-title-after menu-image-not-hovered"><img width="26" height="26" src="https://www.bandwidth.com/wp-content/uploads/icon_nav-communications-apis.svg" class="menu-image menu-image-title-after" alt="" loading="lazy" /><span class="menu-image-title-after menu-image-title">Communication APIs</span></a>
+	<ul class="sub-menu">
+		<li id="menu-item-202412" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-202412"><a href="/voice/voice-api/">Voice API</a></li>
+		<li id="menu-item-188657" class="menu-item menu-item-type-post_type menu-item-object-product menu-item-has-children menu-item-188657"><a href="https://www.bandwidth.com/messaging/">Messaging API</a>
+		<ul class="sub-menu">
+			<li id="menu-item-188666" class="menu-item menu-item-type-post_type menu-item-object-product menu-item-188666"><a href="https://www.bandwidth.com/messaging/sms-api/">SMS API</a></li>
+			<li id="menu-item-188661" class="menu-item menu-item-type-post_type menu-item-object-product menu-item-188661"><a href="https://www.bandwidth.com/messaging/mms-api/">MMS API</a></li>
+			<li id="menu-item-188668" class="menu-item menu-item-type-post_type menu-item-object-product menu-item-188668"><a href="https://www.bandwidth.com/messaging/toll-free-sms/">Toll-Free SMS</a></li>
+			<li id="menu-item-188658" class="menu-item menu-item-type-post_type menu-item-object-product menu-item-188658"><a href="https://www.bandwidth.com/messaging/local-a2p-messaging/">Local A2P</a></li>
+			<li id="menu-item-190303" class="menu-item menu-item-type-post_type menu-item-object-product menu-item-190303"><a href="https://www.bandwidth.com/messaging/group-messaging-api/">Group Messaging</a></li>
+			<li id="menu-item-188665" class="menu-item menu-item-type-post_type menu-item-object-product menu-item-188665"><a href="https://www.bandwidth.com/messaging/short-codes/">Short Codes</a></li>
+		</ul>
+</li>
+		<li id="menu-item-188656" class="menu-item menu-item-type-post_type menu-item-object-product menu-item-188656"><a href="https://www.bandwidth.com/911/emergency-calling-api/">Emergency Calling API</a></li>
+		<li id="menu-item-188669" class="new-flag menu-item menu-item-type-post_type menu-item-object-product menu-item-188669"><a href="https://www.bandwidth.com/video-api/">Video API</a></li>
+		<li id="menu-item-188671" class="menu-item menu-item-type-post_type menu-item-object-product menu-item-188671"><a href="https://www.bandwidth.com/voice/webrtc/">WebRTC Calling API</a></li>
+		<li id="menu-item-188655" class="menu-item menu-item-type-post_type menu-item-object-product menu-item-188655"><a href="https://www.bandwidth.com/authentication-api/">Authentication API</a></li>
+	</ul>
+</li>
+	<li id="menu-item-188682" class="menu-item menu-item-type-post_type menu-item-object-product menu-item-has-children menu-item-188682"><a href="https://www.bandwidth.com/enterprise-cloud/" class="menu-image-title-after menu-image-not-hovered"><img width="24" height="34" src="https://www.bandwidth.com/wp-content/uploads/icon_nav-enterprise-cloud.svg" class="menu-image menu-image-title-after" alt="" loading="lazy" /><span class="menu-image-title-after menu-image-title">Enterprise Cloud</span></a>
+	<ul class="sub-menu">
+		<li id="menu-item-188683" class="menu-item menu-item-type-post_type menu-item-object-product menu-item-188683"><a href="https://www.bandwidth.com/voice/sip-trunking/">SIP Trunking</a></li>
+		<li id="menu-item-188684" class="menu-item menu-item-type-post_type menu-item-object-product menu-item-188684"><a href="https://www.bandwidth.com/911/">Enterprise 911</a></li>
+		<li id="menu-item-188774" class="menu-item menu-item-type-post_type menu-item-object-product menu-item-188774"><a href="https://www.bandwidth.com/partners/microsoft-teams-direct-routing/">Duet for Microsoft Teams</a></li>
+		<li id="menu-item-192727" class="menu-item menu-item-type-post_type menu-item-object-product menu-item-192727"><a href="https://www.bandwidth.com/partners/duet-for-ringcentral/">Duet for RingCentral</a></li>
+		<li id="menu-item-202188" class="new-flag menu-item menu-item-type-custom menu-item-object-custom menu-item-202188"><a href="/partners/duet-for-genesys/">Duet for Genesys</a></li>
+		<li id="menu-item-222313" class="new-flag menu-item menu-item-type-custom menu-item-object-custom menu-item-222313"><a href="/partners/pindrop-integration">Pindrop Integration</a></li>
+	</ul>
+</li>
+	<li id="menu-item-188673" class="menu-item menu-item-type-post_type menu-item-object-product menu-item-has-children menu-item-188673"><a href="https://www.bandwidth.com/direct-access/" class="menu-image-title-after menu-image-not-hovered"><img width="27" height="27" src="https://www.bandwidth.com/wp-content/uploads/icon_nav-direct-access.svg" class="menu-image menu-image-title-after" alt="" loading="lazy" /><span class="menu-image-title-after menu-image-title">Direct Access</span></a>
+	<ul class="sub-menu">
+		<li id="menu-item-188679" class="menu-item menu-item-type-post_type menu-item-object-product menu-item-188679"><a href="https://www.bandwidth.com/voice/voip-origination/">VoIP Origination</a></li>
+		<li id="menu-item-188680" class="menu-item menu-item-type-post_type menu-item-object-product menu-item-188680"><a href="https://www.bandwidth.com/voice/voip-termination/">VoIP Termination</a></li>
+		<li id="menu-item-188677" class="menu-item menu-item-type-post_type menu-item-object-product menu-item-188677"><a href="https://www.bandwidth.com/voice/toll-free-services/">Toll-Free Services</a></li>
+		<li id="menu-item-188675" class="menu-item menu-item-type-post_type menu-item-object-product menu-item-188675"><a href="https://www.bandwidth.com/voice/international-long-distance/">International Long Distance</a></li>
+		<li id="menu-item-188674" class="menu-item menu-item-type-post_type menu-item-object-product menu-item-188674"><a href="https://www.bandwidth.com/911/e911-for-voip-and-uc/">E911</a></li>
+		<li id="menu-item-188685" class="menu-item menu-item-type-post_type menu-item-object-product menu-item-188685"><a href="https://www.bandwidth.com/911/dynamic-location-routing/">Emergency Location Management</a></li>
+		<li id="menu-item-188676" class="menu-item menu-item-type-post_type menu-item-object-product menu-item-188676"><a href="https://www.bandwidth.com/messaging/sms-gateway/">SMS Gateway</a></li>
+	</ul>
+</li>
+	<li id="menu-item-188686" class="menu-item menu-item-type-post_type menu-item-object-product menu-item-has-children menu-item-188686"><a href="https://www.bandwidth.com/tools-and-services/" class="menu-image-title-after menu-image-not-hovered"><img width="29" height="27" src="https://www.bandwidth.com/wp-content/uploads/icon_nav-tools-services.svg" class="menu-image menu-image-title-after" alt="" loading="lazy" /><span class="menu-image-title-after menu-image-title">Tools &#038; Services</span></a>
+	<ul class="sub-menu">
+		<li id="menu-item-188687" class="no-flex menu-item menu-item-type-post_type menu-item-object-product menu-item-has-children menu-item-188687"><a href="https://www.bandwidth.com/phone-numbers/">Phone Number Management</a>
+		<ul class="sub-menu">
+			<li id="menu-item-188775" class="menu-item menu-item-type-post_type menu-item-object-product menu-item-188775"><a href="https://www.bandwidth.com/phone-numbers/number-porting/">Number Porting</a></li>
+			<li id="menu-item-191369" class="menu-item menu-item-type-post_type menu-item-object-product menu-item-191369"><a href="https://www.bandwidth.com/tools-and-services/phone-number-lookup-api/">Number Lookup API</a></li>
+			<li id="menu-item-188690" class="menu-item menu-item-type-post_type menu-item-object-product menu-item-188690"><a href="https://www.bandwidth.com/phone-numbers/local-phone-numbers/">Local Phone Numbers</a></li>
+		</ul>
+</li>
+		<li id="menu-item-188689" class="menu-item menu-item-type-post_type menu-item-object-product menu-item-188689"><a href="https://www.bandwidth.com/phone-numbers/cnam-caller-id-name/">Caller ID Management</a></li>
+		<li id="menu-item-194999" class="menu-item menu-item-type-post_type menu-item-object-product menu-item-194999"><a href="https://www.bandwidth.com/products/insights/">Insights</a></li>
+	</ul>
+</li>
+</ul>
+</li>
+<li id="menu-item-188698" class="nav-solutions menu-item menu-item-type-post_type_archive menu-item-object-solution menu-item-has-children menu-item-188698"><a href="https://www.bandwidth.com/solutions/">Solutions</a><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 26 26"><path d="M 13 15.40625 L 21.765625 6.820313 C 22.15625 6.4375 22.78125 6.441406 23.171875 6.828125 L 24.707031 8.363281 C 25.097656 8.757813 25.097656 9.390625 24.703125 9.78125 L 13.707031 20.707031 C 13.511719 20.902344 13.257813 21 13 21 C 12.742188 21 12.488281 20.902344 12.292969 20.707031 L 1.296875 9.78125 C 0.902344 9.390625 0.902344 8.757813 1.292969 8.363281 L 2.828125 6.828125 C 3.21875 6.441406 3.84375 6.4375 4.234375 6.820313 Z "/></svg>
+<ul class="sub-menu">
+	<li id="menu-item-188702" class="nav-solutions menu-item menu-item-type-post_type_archive menu-item-object-solution menu-item-has-children menu-item-188702"><a href="https://www.bandwidth.com/solutions/" class="menu-image-title-after menu-image-not-hovered"><img width="36" height="26" src="https://www.bandwidth.com/wp-content/uploads/icon_nav-solutions.svg" class="menu-image menu-image-title-after" alt="" loading="lazy" /><span class="menu-image-title-after menu-image-title">Solutions</span></a>
+	<ul class="sub-menu">
+		<li id="menu-item-193035" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-193035"><a href="/solutions/b2c-digital-engagements/">B2C Digital Engagements</a></li>
+		<li id="menu-item-193036" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-193036"><a href="/solutions/communication-service-providers/">Communication Service Providers</a></li>
+		<li id="menu-item-193037" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-193037"><a href="/solutions/enterprise-communications/">Enterprise Communications</a></li>
+	</ul>
+</li>
+	<li id="menu-item-188703" class="menu-item menu-item-type-post_type_archive menu-item-object-use-case menu-item-has-children menu-item-188703"><a href="https://www.bandwidth.com/use-cases/" class="menu-image-title-after menu-image-not-hovered"><img width="28" height="28" src="https://www.bandwidth.com/wp-content/uploads/icon_nav-use-cases.svg" class="menu-image menu-image-title-after" alt="" loading="lazy" /><span class="menu-image-title-after menu-image-title">Use Cases</span></a>
+	<ul class="sub-menu">
+		<li id="menu-item-188707" class="menu-item menu-item-type-post_type menu-item-object-use-case menu-item-188707"><a href="https://www.bandwidth.com/use-cases/text-alerts-and-notifications/">Text Alerts &#038; Notifications</a></li>
+		<li id="menu-item-188706" class="menu-item menu-item-type-post_type menu-item-object-use-case menu-item-188706"><a href="https://www.bandwidth.com/use-cases/click-to-call/">Click-to-Call</a></li>
+		<li id="menu-item-188704" class="menu-item menu-item-type-post_type menu-item-object-use-case menu-item-188704"><a href="https://www.bandwidth.com/use-cases/bring-your-own-carrier-byoc/">Bring Your Own Carrier (BYOC)</a></li>
+		<li id="menu-item-188705" class="menu-item menu-item-type-post_type menu-item-object-use-case menu-item-188705"><a href="https://www.bandwidth.com/use-cases/call-tracking/">Call Tracking</a></li>
+		<li id="menu-item-188708" class="menu-item menu-item-type-post_type_archive menu-item-object-use-case menu-item-188708"><a href="https://www.bandwidth.com/use-cases/">View all use cases</a></li>
+	</ul>
+</li>
+</ul>
+</li>
+<li id="menu-item-191452" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-191452"><a href="https://www.bandwidth.com/network/">Network</a></li>
+<li id="menu-item-199985" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-199985"><a href="/coverage/">Coverage</a></li>
+<li id="menu-item-191191" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-191191"><a href="https://www.bandwidth.com/pricing/">Pricing</a></li>
+<li id="menu-item-191451" class="nav-solutions menu-item menu-item-type-post_type_archive menu-item-object-resource menu-item-has-children menu-item-191451"><a href="https://www.bandwidth.com/resources/">Resources</a><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 26 26"><path d="M 13 15.40625 L 21.765625 6.820313 C 22.15625 6.4375 22.78125 6.441406 23.171875 6.828125 L 24.707031 8.363281 C 25.097656 8.757813 25.097656 9.390625 24.703125 9.78125 L 13.707031 20.707031 C 13.511719 20.902344 13.257813 21 13 21 C 12.742188 21 12.488281 20.902344 12.292969 20.707031 L 1.296875 9.78125 C 0.902344 9.390625 0.902344 8.757813 1.292969 8.363281 L 2.828125 6.828125 C 3.21875 6.441406 3.84375 6.4375 4.234375 6.820313 Z "/></svg>
+<ul class="sub-menu">
+	<li id="menu-item-188722" class="nav-solutions menu-item menu-item-type-post_type_archive menu-item-object-resource menu-item-has-children menu-item-188722"><a href="https://www.bandwidth.com/resources/" class="menu-image-title-after menu-image-not-hovered"><img width="30" height="18" src="https://www.bandwidth.com/wp-content/uploads/icon_nav-content-library.svg" class="menu-image menu-image-title-after" alt="" loading="lazy" /><span class="menu-image-title-after menu-image-title">Resources</span></a>
+	<ul class="sub-menu">
+		<li id="menu-item-188712" class="menu-item menu-item-type-post_type_archive menu-item-object-customer menu-item-188712"><a href="https://www.bandwidth.com/customers/">Customers</a></li>
+		<li id="menu-item-188711" class="menu-item menu-item-type-post_type_archive menu-item-object-resource menu-item-188711"><a href="https://www.bandwidth.com/resources/">Content Library</a></li>
+		<li id="menu-item-188713" class="menu-item menu-item-type-taxonomy menu-item-object-resource_type menu-item-188713"><a href="https://www.bandwidth.com/resources/webinars/">Webinars</a></li>
+		<li id="menu-item-188714" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-188714"><a href="https://www.bandwidth.com/blog/">Blog</a></li>
+		<li id="menu-item-188721" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-188721"><a href="https://www.bandwidth.com/release-notes/">Release Notes</a></li>
+		<li id="menu-item-188715" class="menu-item menu-item-type-post_type_archive menu-item-object-glossary menu-item-188715"><a href="https://www.bandwidth.com/glossary/">Glossary</a></li>
+		<li id="menu-item-203203" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-203203"><a href="/partners/">Partner Program</a></li>
+	</ul>
+</li>
+	<li id="menu-item-188717" class="nav-solutions menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-188717"><a href="https://www.bandwidth.com/developers/" class="menu-image-title-after menu-image-not-hovered"><img width="33" height="23" src="https://www.bandwidth.com/wp-content/uploads/icon_nav-sdks.svg" class="menu-image menu-image-title-after" alt="" loading="lazy" /><span class="menu-image-title-after menu-image-title">Developers</span></a>
+	<ul class="sub-menu">
+		<li id="menu-item-188718" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-188718"><a target="_blank" rel="noopener nofollow" href="https://dev.bandwidth.com/">Documentation</a></li>
+		<li id="menu-item-188719" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-188719"><a target="_blank" rel="noopener nofollow" href="https://dev.bandwidth.com/sdks/about.html">SDKs</a></li>
+		<li id="menu-item-188720" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-188720"><a target="_blank" rel="noopener nofollow" href="https://status.bandwidth.com/">Status and Uptime</a></li>
+	</ul>
+</li>
+</ul>
+</li>
+</ul>							
+							<!-- Callouts -->
+							<div class="header-callouts">
+
+								<!-- Button -->
+								<div class="header-button">
+																																														<a class="button small header-button-link" href="/free-trial/" target="_self">
+																			Try it Free									</a>
+								</div>
+
+								<!-- Call Link -->
+								<div class="header-call">
+																											<a class="header-call-link" href="tel:+18008085150">
+										<span class="header-call-link-label">
+											+1 800 808 5150										</span>
+									</a>
+								</div>
+
+								<!-- Support Link -->
+								<div class="header-support">
+																																														<a class="header-support-link" href="https://www.bandwidth.com/support/" target="_self">
+																			<span class="header-support-link-label">
+											Support										</span>
+									</a>
+								</div>
+
+								<!-- Log In Link -->
+								<div class="header-log-in">
+																																														<a class="header-log-in-link" href="https://www.bandwidth.com/login/" target="_self">
+																			<span class="header-log-in-link-label">
+											Log In										</span>
+									</a>
+								</div>
+
+								<!-- Search -->
+								<div class="header-search">
+									<a class="header-search-link" href="/search/">
+										<span class="hidden-link-text">Search</span>
+										<svg class="header-search-open-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 26 26">
+											<path class="header-search-open-path" d="M 10 0.1875 C 4.578125 0.1875 0.1875 4.578125 0.1875 10 C 0.1875 15.421875 4.578125 19.8125 10 19.8125 C 12.289063 19.8125 14.394531 19.003906 16.0625 17.6875 L 16.9375 18.5625 C 16.570313 19.253906 16.699219 20.136719 17.28125 20.71875 L 21.875 25.34375 C 22.589844 26.058594 23.753906 26.058594 24.46875 25.34375 L 25.34375 24.46875 C 26.058594 23.753906 26.058594 22.589844 25.34375 21.875 L 20.71875 17.28125 C 20.132813 16.695313 19.253906 16.59375 18.5625 16.96875 L 17.6875 16.09375 C 19.011719 14.421875 19.8125 12.300781 19.8125 10 C 19.8125 4.578125 15.421875 0.1875 10 0.1875 Z M 10 2 C 14.417969 2 18 5.582031 18 10 C 18 14.417969 14.417969 18 10 18 C 5.582031 18 2 14.417969 2 10 C 2 5.582031 5.582031 2 10 2 Z M 4.9375 7.46875 C 4.421875 8.304688 4.125 9.289063 4.125 10.34375 C 4.125 13.371094 6.566406 15.8125 9.59375 15.8125 C 10.761719 15.8125 11.859375 15.433594 12.75 14.8125 C 12.511719 14.839844 12.246094 14.84375 12 14.84375 C 8.085938 14.84375 4.9375 11.695313 4.9375 7.78125 C 4.9375 7.675781 4.933594 7.574219 4.9375 7.46875 Z "/>
+										</svg>
+										<svg class="header-search-close-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 26 26">
+											<path class="header-search-close-path" d="M 6.65625 4 C 6.367188 4 6.105469 4.113281 5.90625 4.3125 L 4.3125 5.90625 C 3.914063 6.304688 3.914063 7 4.3125 7.5 L 9.8125 13 L 4.3125 18.5 C 3.914063 19 3.914063 19.695313 4.3125 20.09375 L 5.90625 21.6875 C 6.40625 22.085938 7.101563 22.085938 7.5 21.6875 L 13 16.1875 L 18.5 21.6875 C 19 22.085938 19.695313 22.085938 20.09375 21.6875 L 21.6875 20.09375 C 22.085938 19.59375 22.085938 18.898438 21.6875 18.5 L 16.1875 13 L 21.6875 7.5 C 22.085938 7 22.085938 6.304688 21.6875 5.90625 L 20.09375 4.3125 C 19.59375 3.914063 18.898438 3.914063 18.5 4.3125 L 13 9.8125 L 7.5 4.3125 C 7.25 4.113281 6.945313 4 6.65625 4 Z "/>
+										</svg>
+									</a>
+									<div class="header-search-form">
+										<form role="search" method="get" class="search-form" action="https://www.bandwidth.com/">
+				<label>
+					<span class="screen-reader-text">Search for:</span>
+					<input type="search" class="search-field" placeholder="Search &hellip;" value="" name="s" />
+				</label>
+				<input type="submit" class="search-submit" value="Search" />
+			</form>									</div>
+								</div>
+
+							</div><!-- .header-callouts -->
+
+						</div><!-- .header-navigation-inner-wrapper -->
+					</div><!-- .header-navigation -->
+
+				</nav><!-- .header-content -->
+			</div><!-- .header-wrapper -->
+
+			<!-- Secondary Navigation (Blog) -->
+			
+			<!-- Secondary Navigation (Products) -->
+			
+			<!-- Secondary Navigation (Glossary Page) -->
+			
+			<!-- Secondary Navigation (Company Page) -->
+			<!-- Note : only being used on the newsroom archive page for now -->
+			
+			<!-- Secondary Navigation (Partners Archive Page) -->
+			
+		</header>
+
+
+		<!-- .header -->
+
+<!-- Page -->
+<main class="home-page" id="main-content">
+
+	<!-- Hero -->
+	<header class="home-page-hero">
+
+		<div class="home-page-hero-wrapper">
+	
+			<!-- Text -->
+			<div class="home-page-hero-text">
+	
+						
+									<h1 class="home-page-hero-title">
+						Exceptional experiences everywhere					</h1>
+						
+									<div class="home-page-hero-description">
+						<h3>The universal platform for global enterprise communications</h3>
+<p>Bandwidth is the global cloud platform enterprises choose for cloud-ready voice, messaging, and emergency services.</p>
+					</div>
+						
+																									<p class="home-page-hero-buttons">
+															<a class="button home-page-hero-primary-button" href="/talk-to-an-expert/" target="">Talk to an expert</a>
+																						<a class="button secondary home-page-hero-secondary-button" href="/coverage/" target="">Global coverage</a>
+													</p>
+										
+			</div>
+	
+			<!-- Image -->
+			<div class="home-page-hero-image-wrapper">
+									<img width="804" height="898" class="home-page-hero-image-alt" src="https://www.bandwidth.com/wp-content/uploads/homepage-hero-image-new.png" alt="Universal platform, Global Reach, Trusted Experts">
+								
+
+			</div>
+			
+		</div>
+	</header>
+
+	<!-- Content -->
+			<section class="content">
+			<div class="content-wrapper">
+								
+<style>
+
+@media (min-width: 1180px) {
+
+.home-page-solution:nth-child(2) .home-page-solution-text,
+.home-page-solution:nth-child(3) .home-page-solution-text {
+    margin-top: 100px;
+}
+
+}
+
+</style>
+
+
+
+<p></p>
+			</div>
+		</section>
+	
+	<!-- Logos -->
+	<section class="home-page-logos">
+		<!-- Customer Logos -->
+									<div class="home-page-logos-customers">
+											<div class="home-page-logos-group customers">
+							<!-- <a href="/customers/">
+								<div class="logos-cta home">
+									<span href="/customers/" class="button">View Customers</span>
+								</div>
+							</a> -->
+																																<img width="129" height="50" class="home-page-logos-image" src="https://www.bandwidth.com/wp-content/uploads/google-2.svg" alt="google logo" />
+																																								<img width="175" height="50" class="home-page-logos-image" src="https://www.bandwidth.com/wp-content/uploads/microsoft-1.svg" alt="microsoft logo" />
+																																								<img width="127" height="50" class="home-page-logos-image" src="https://www.bandwidth.com/wp-content/uploads/zoom-3.svg" alt="zoom logo" />
+																																								<img width="172" height="50" class="home-page-logos-image" src="https://www.bandwidth.com/wp-content/uploads/genesys-1.svg" alt="genesys logo" />
+																																								<img width="83" height="50" class="home-page-logos-image" src="https://www.bandwidth.com/wp-content/uploads/8x8-1.svg" alt="8x8 logo" />
+																																								<img width="161" height="50" class="home-page-logos-image" src="https://www.bandwidth.com/wp-content/uploads/dialpad-1.svg" alt="dialpad logo" />
+																																								<img width="121" height="50" class="home-page-logos-image" src="https://www.bandwidth.com/wp-content/uploads/rover-2.svg" alt="rover logo" />
+																																								<img width="96" height="50" class="home-page-logos-image" src="https://www.bandwidth.com/wp-content/uploads/uber-1.svg" alt="uber logo" />
+																																								<img width="179" height="50" class="home-page-logos-image" src="https://www.bandwidth.com/wp-content/uploads/ringcentral-2.svg" alt="ringcentral logo" />
+																																								<img width="103" height="50" class="home-page-logos-image" src="https://www.bandwidth.com/wp-content/uploads/arlo-2.svg" alt="arlo logo" />
+																																								<img width="111" height="50" class="home-page-logos-image" src="https://www.bandwidth.com/wp-content/uploads/wish-1.svg" alt="wish logo" />
+																					</div>
+									</div>
+					
+	</section><!-- .home-page-logos -->
+
+	<!-- Solutions -->
+	<section class="home-page-solutions">
+
+		<svg class="home-page-solutions-top-wave" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1920 300">
+			<defs>
+				<clipPath id="clip-path">
+				<rect id="Rectangle_1737" data-name="Rectangle 1737" transform="translate(-3916 -392)" fill="#1c0a14"></rect>
+				</clipPath>
+			</defs>
+			<g id="Mask_Group_5" data-name="Mask Group 5" transform="translate(3916 392)">
+				<g id="Group_6773" data-name="Group 6773">
+				<path id="Vector" d="M7.641,51.215C124.493-7.164,252.226-14.838,378.169,32.365,489.8,74.2,565.614,138.715,660.472,203.641c185.38,126.884,421.408,238.41,651.661,237.65,156.459-.517,308.31-48.728,464.851-44.989,6.031.155,12.137.386,18.437.7,122.289,6.079,270.732,41.954,371.495,104.187l-19.4,878.1L9.237,1209.7Z" transform="translate(-4201.607 -356.005) rotate(-8.089)" fill="#079cee"></path>
+				<path id="Vector-2" data-name="Vector" d="M2.359,48.994C118.85-7.355,246.444-14.25,372.5,32.317,484.231,73.593,560.278,136.8,655.355,200.491c185.808,124.477,424.6,216.475,654.665,216.785,156.33.21,307.837-46.073,464.268-41.715,125.549,3.717,284.038,39.8,390.093,103.976l-17.831,873.244L9.237,1177.794Z" transform="translate(-4173.966 -292.38) rotate(-10.089)" fill="#0a2540"></path>
+				</g>
+			</g>
+		</svg>
+
+
+		<div class="home-page-solutions-wrapper">
+			<div class="home-page-solutions-content">
+				<div class="home-page-solutions-title">
+											<h2>Solutions for:</h2>
+									</div>
+				<div class="home-page-solutions-cards">
+																		<div class="home-page-solutions-card">
+								<div class="solution-image">
+									<img width="131" height="101" src="https://www.bandwidth.com/wp-content/uploads/solution1.svg" alt="">
+								</div>
+								<div class="solution-content">
+									Customer engagements software and app builders								</div>
+								<div class="solution-link">
+									<a href="/solutions/saas-apps/">THAT'S ME! SHOW ME										<svg xmlns="http://www.w3.org/2000/svg" width="23.028" height="19.19" viewBox="0 0 23.028 19.19">
+											<path id="_" data-name="→" d="M0,7.5H17.6L11.317,1.8A4.661,4.661,0,0,1,13.041.39,4.076,4.076,0,0,1,14.945,0l8.083,7.92v3.344l-8.083,7.92a4.364,4.364,0,0,1-1.9-.352,4.924,4.924,0,0,1-1.724-1.478l6.287-5.7H0Z" fill="#00bf8c"/>
+										</svg>
+									</a>
+								</div>
+							</div>
+													<div class="home-page-solutions-card">
+								<div class="solution-image">
+									<img width="126" height="92" src="https://www.bandwidth.com/wp-content/uploads/solution2.svg" alt="">
+								</div>
+								<div class="solution-content">
+									Our telco experts and cloud communication folks								</div>
+								<div class="solution-link">
+									<a href="/solutions/communication-service-providers/">THAT'S ME! SHOW ME										<svg xmlns="http://www.w3.org/2000/svg" width="23.028" height="19.19" viewBox="0 0 23.028 19.19">
+											<path id="_" data-name="→" d="M0,7.5H17.6L11.317,1.8A4.661,4.661,0,0,1,13.041.39,4.076,4.076,0,0,1,14.945,0l8.083,7.92v3.344l-8.083,7.92a4.364,4.364,0,0,1-1.9-.352,4.924,4.924,0,0,1-1.724-1.478l6.287-5.7H0Z" fill="#00bf8c"/>
+										</svg>
+									</a>
+								</div>
+							</div>
+													<div class="home-page-solutions-card">
+								<div class="solution-image">
+									<img width="119" height="80" src="https://www.bandwidth.com/wp-content/uploads/solution3.svg" alt="">
+								</div>
+								<div class="solution-content">
+									IT leaders and future cloud movers								</div>
+								<div class="solution-link">
+									<a href="/solutions/enterprise-communications/">THAT'S ME! SHOW ME										<svg xmlns="http://www.w3.org/2000/svg" width="23.028" height="19.19" viewBox="0 0 23.028 19.19">
+											<path id="_" data-name="→" d="M0,7.5H17.6L11.317,1.8A4.661,4.661,0,0,1,13.041.39,4.076,4.076,0,0,1,14.945,0l8.083,7.92v3.344l-8.083,7.92a4.364,4.364,0,0,1-1.9-.352,4.924,4.924,0,0,1-1.724-1.478l6.287-5.7H0Z" fill="#00bf8c"/>
+										</svg>
+									</a>
+								</div>
+							</div>
+															</div>
+			</div>
+		</div>
+
+		
+		<svg class="home-page-solutions-btm-wave" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1920 170">
+			<defs>
+				<clipPath id="clip-path">
+				<rect id="Rectangle_1738" data-name="Rectangle 1738" transform="translate(-4755 2188)" fill="#1c0a14"></rect>
+				</clipPath>
+			</defs>
+			<g id="Mask_Group_6" data-name="Mask Group 6" transform="translate(4755 -2188)">
+				<g id="Group_6774" data-name="Group 6774">
+				<path id="Subtraction_9" data-name="Subtraction 9" d="M2291.99,1364.685l0,0h0c-3.074-1.845-6.44-3.879-9.7-5.847l-.01-.006c-22.353-13.508-52.967-32.008-92.485-52.529-21.619-11.227-43.729-21.9-65.714-31.73-25.683-11.481-52.076-22.2-78.446-31.862-29.774-10.908-60.389-20.788-91-29.363-16.526-4.63-33.4-8.977-50.146-12.921-17.546-4.132-35.45-7.937-53.214-11.31-18.55-3.523-37.478-6.675-56.259-9.369-19.559-2.807-39.5-5.2-59.281-7.1-20.544-1.979-41.5-3.493-62.281-4.5-21.536-1.044-43.492-1.573-65.257-1.573-22.808,0-46.058.581-69.106,1.727-27.065,1.346-53.749,2.934-79.308,4.719-24.366,1.7-48.5,3.64-71.738,5.758-42.9,3.911-83.811,8.5-125.068,14.034-34.366,4.608-69.6,9.972-107.7,16.4-33.958,5.726-66.99,11.743-98.935,17.563l-.014,0c-30.715,5.6-62.476,11.381-94.985,16.893-36.437,6.177-69.974,11.347-102.528,15.8-39.059,5.348-77.574,9.814-117.747,13.653-21.754,2.079-44.289,3.992-66.979,5.687-23.8,1.777-48.583,3.375-73.661,4.749-26.368,1.445-54.539,2.177-83.733,2.178-41.71,0-86.6-1.491-133.432-4.431-43.122-2.708-88.511-6.681-134.9-11.811-42.537-4.7-86.246-10.411-129.911-16.964-40-6-79.854-12.7-118.449-19.891V.143C3.822.048,7.691,0,11.5,0,26.046,0,40.886.7,55.609,2.065c14.8,1.377,29.878,3.474,44.826,6.232,11.214,2.07,22.542,4.482,33.669,7.169,10.637,2.569,21.452,5.477,32.144,8.644,19.8,5.865,39.709,12.732,60.852,21,39.418,15.406,76.576,33.089,115.915,51.81l.006,0,.021.01c21.069,10.026,42.855,20.394,65.334,30.544,42.268,19.086,85.1,36.473,127.3,51.68,22.277,8.027,44.748,15.575,66.788,22.436,22.853,7.113,45.834,13.672,68.305,19.492,23.278,6.029,46.625,11.427,69.393,16.042,23.557,4.776,47.126,8.842,70.051,12.086,23.694,3.353,47.339,5.917,70.278,7.622,23.683,1.761,47.26,2.654,70.076,2.654,24.1,0,48.011-.995,71.071-2.957,23.77-2.022,47.305-5.13,69.951-9.237,17.717-3.213,35.637-7.088,54.783-11.845,17.058-4.239,34.7-9.087,53.949-14.821,35.744-10.65,71.7-22.82,106.474-34.59l.015,0c37.835-12.806,76.959-26.048,115.9-37.362,20.959-6.09,40.2-11.151,58.809-15.473,20.892-4.852,40.47-8.655,59.853-11.628,6.059-.917,12.036-1.749,18.274-2.541,17.91-2.276,36.6-4.021,55.541-5.185,19.109-1.174,38.681-1.77,58.172-1.77,23.762,0,47.643.882,70.98,2.621,24.033,1.791,47.689,4.508,70.311,8.073,23.459,3.7,46.081,8.354,67.238,13.839a528.941,528.941,0,0,1,61.76,19.919l110.591,712.47,155.154-18.174,82.6,513.864Z" transform="matrix(0.999, 0.035, -0.035, 0.999, -4877.729, 1020.184)" fill="#079cee"></path>
+				<path id="Vector_18" data-name="Vector 18" d="M.27,47.339c95.629,47.492,490.1,177.25,789.983,199.3,419.924,30.879,509.455-26.912,945.321,7.293,409.134,32.108,644.633,224.776,722.7,284.791l-18.722-506.7L6.3.034Z" transform="matrix(0.992, -0.126, 0.126, 0.992, -5071.652, 2180.064)" fill="#0a2540"></path>
+				<path id="Vector" d="M2.359,48.994C118.85-7.355,246.444-14.25,372.5,32.317,484.231,73.593,560.278,136.8,655.355,200.491c185.808,124.477,424.6,216.475,654.665,216.785,156.33.21,307.837-46.073,464.268-41.715,125.549,3.717,284.038,39.8,390.093,103.976l-17.831,873.244L9.237,1177.794Z" transform="translate(-5128.966 1116.776) rotate(-10.089)" fill="#0a2540"></path>
+				</g>
+			</g>
+		</svg>	
+	
+	</section><!-- .home-page-solutions -->
+
+	<!-- Customer Experience -->
+	<section class="home-page-tools">
+		<div class="home-page-tools-wrapper">
+			<div class="home-page-tools-copy">
+									<h4>A Universal Platform</h4>
+													<h2>Flexibility to create an integrated customer experience</h2>
+													<p class="large-text"><p>Bandwidth is a communications platform with limitless flexibility. You need integrations, enterprise-class APIs, and tools to manage your communications stack intelligently. We are open where you need it the most, with optionality and control.</p>
+<ul>
+<li>Integrate directly into collaboration applications</li>
+<li>Launch easily with an API library built to scale</li>
+<li>Unbundle telecom and BYOC</li>
+</ul>
+</p>
+							</div>
+			<div class="home-page-tools-anim">
+									<div class="home-page-tools-anim-player">
+					<lottie-player id="home-page-lottie-tools" src="https://assets6.lottiefiles.com/packages/lf20_w0grzrvc.json"  background="transparent"  speed="1"  loop alt="animation of Bandwidth dashboard with popping up text descriptions" role="image"></lottie-player>					</div>
+							</div>
+		</div>
+	</section>
+
+
+
+	<!-- Reach -->
+	<section class="home-page-reach">
+		<div class="home-page-reach-wrapper">
+			<div class="home-page-reach-content">
+									<h4>Global reach</h4>
+													<h2>Reliable communication across borders</h2>
+													<p class="large-text">Our global network is directly connected where it matters most. Giving unmatched reliability. Bringing your customers closer. Scaling wherever your business takes you.</p>
+				
+				<div class="home-page-reach-cards">
+																	<div class="home-page-reach-card">
+								<div class="home-page-reach-count-up">
+									<span class="number-count-up" data-number="90">0 </span>%								</div>
+								<div class="home-page-reach-card-description">
+									of the global economy covered								</div>
+							</div>
+													<div class="home-page-reach-card">
+								<div class="home-page-reach-count-up">
+									<span class="number-count-up" data-number="38">0 </span>+								</div>
+								<div class="home-page-reach-card-description">
+									countries with full PSTN replacement								</div>
+							</div>
+													<div class="home-page-reach-card">
+								<div class="home-page-reach-count-up">
+									<span class="number-count-up" data-number="28">0 </span>+								</div>
+								<div class="home-page-reach-card-description">
+									countries where we are a national operator								</div>
+							</div>
+															</div>
+			</div>
+		</div>
+	</section>
+
+	<section class="home-page-coverage-banner">
+		<div class="home-page-coverage-banner-wrapper">
+			<div class="white-card">
+				<div class="inner-wrapper">
+					<!-- <h3>Experts that are with you every step of the way</h3> -->
+
+					<div class="home-page-coverage-banner-img-wrapper">
+						<img width="139" height="135" src="https://www.bandwidth.com/wp-content/uploads/world-banner.svg" alt="">
+					</div>
+
+					<div class="home-page-coverage-banner-content-wrapper">
+													<h3 class="home-page-banner-title">Our global network ensures unmatched quality, greater control, and better consistency. </h3>
+							
+							
+													<a href="/coverage/" class="home-page-banner-link arrow-link">See specific coverage</a>
+											</div>
+
+					<!-- <p>Smoothly navigate changing industry and local regulations with our global team of experts who are here to help you with the lay of the land. We speak telecom so you don't have to.</p> -->
+					<!-- <p style="margin: 0; font-size: 14px;"><a href="/talk-to-an-expert/" class="home-page-banner-link arrow-link" target="_blank" rel="noopener">Talk to an expert</a></p> -->
+				</div>
+			</div>
+			<style>
+			@media screen and (max-width: 1100px) {
+				.home-page-coverage-banner .white-card {        
+					background-image: none !important;
+				}
+				.home-page-coverage-banner .white-card div {
+					padding: 20px !important;
+				}
+			}
+			</style>
+		</div>
+
+
+	</section>
+
+
+
+	<!-- Software smarts + Network -->
+	<section class="home-page-tools">
+		<div class="home-page-tools-wrapper">
+			<div class="home-page-tools-copy">
+									<h4>Trusted Expertise</h4>
+													<h2>Software smarts +<br>Network know how</h2>
+													<p class="large-text"><p>You are expected to integrate tooling, automate operations, navigate regulatory requirements, and deliver a top-notch experience across channels and geographies. It’s no small feat.</p>
+<p>Bandwidth is rooted in both telecom and real-world software expertise. Let us help you create experiences that set your business apart.</p>
+</p>
+							</div>
+						<div class="home-page-tools-anim img">
+					<img width="833" height="681" src="https://www.bandwidth.com/wp-content/uploads/network-section-home.png" alt="">
+						</div>
+		</div>
+	</section>
+
+
+	<!-- Home Page Duet for Genesys Banner -->
+	<section class="home-page-tele">
+		<div class="home-page-tele-bg">
+			<div class="home-page-tele-wrapper">
+				<div class="home-page-tele-content">
+					<div class="home-page-tele-cards">
+						<div class="home-page-tele-card">
+							<svg class="desktop-tablet" xmlns="http://www.w3.org/2000/svg" width="179.306" height="258.885" viewBox="0 0 179.306 258.885">
+								<g id="Group_7204" data-name="Group 7204" transform="translate(-178.589 -5041.058)">
+									<path id="Rectangle_30" data-name="Rectangle 30" d="M46.675,0H0V250H46.675" transform="translate(278.905 5045.5)" fill="none" stroke="#079cee" stroke-linecap="round" stroke-width="2" stroke-dasharray="2 8"/>
+									<g id="Group_7200" data-name="Group 7200" transform="translate(0 -81.363)">
+									<ellipse id="Ellipse_50" data-name="Ellipse 50" cx="3.507" cy="3.507" rx="3.507" ry="3.507" transform="translate(330.981 5379.069) rotate(161.407)" fill="#079cee"/>
+									<ellipse id="Ellipse_86" data-name="Ellipse 86" cx="3.507" cy="3.507" rx="3.507" ry="3.507" transform="translate(346.307 5379.069) rotate(161.407)" fill="#a95adf"/>
+									<ellipse id="Ellipse_87" data-name="Ellipse 87" cx="2.032" cy="2.032" rx="2.032" ry="2.032" transform="translate(357.895 5378.142) rotate(161.407)" fill="#ff6f47"/>
+									</g>
+									<ellipse id="Ellipse_77" data-name="Ellipse 77" cx="3.507" cy="3.507" rx="3.507" ry="3.507" transform="translate(330.981 5047.706) rotate(161.407)" fill="#079cee"/>
+								</g>
+								<g id="Group_7203" data-name="Group 7203" transform="translate(-178.589 -5054.498)">
+									<ellipse id="Ellipse_84" data-name="Ellipse 84" cx="4.712" cy="4.712" rx="4.712" ry="4.712" transform="translate(243.112 5198.764) rotate(161.407)" fill="#a95adf"/>
+									<ellipse id="Ellipse_85" data-name="Ellipse 85" cx="4.712" cy="4.712" rx="4.712" ry="4.712" transform="translate(201.673 5215.555) rotate(161.407)" fill="#ff6f47"/>
+									<ellipse id="Ellipse_83" data-name="Ellipse 83" cx="11.307" cy="11.307" rx="11.307" ry="11.307" transform="translate(207.233 5170.932) rotate(161.407)" fill="#00bf8c"/>
+								</g>
+							</svg>
+							<svg class="mobile" xmlns="http://www.w3.org/2000/svg" width="67.186" height="323.958" viewBox="0 0 67.186 323.958">
+								<g id="Group_6826" data-name="Group 6826" transform="translate(29.515 175.893)">
+									<path id="Rectangle_30" data-name="Rectangle 30" d="M22.259,0H0V320.715H22.259" transform="translate(0 -174.893)" fill="none" stroke="#079cee" stroke-linecap="round" stroke-width="2" stroke-dasharray="2 8"/>
+									<ellipse id="Ellipse_50" data-name="Ellipse 50" cx="1.673" cy="1.673" rx="1.673" ry="1.673" transform="translate(24.836 146.999) rotate(161.407)" fill="#079cee"/>
+									<ellipse id="Ellipse_86" data-name="Ellipse 86" cx="1.673" cy="1.673" rx="1.673" ry="1.673" transform="translate(32.145 146.999) rotate(161.407)" fill="#a95adf"/>
+									<ellipse id="Ellipse_87" data-name="Ellipse 87" cx="0.969" cy="0.969" rx="0.969" ry="0.969" transform="translate(37.671 146.557) rotate(161.407)" fill="#ff6f47"/>
+								</g>
+								<g id="Group_6827" data-name="Group 6827" transform="translate(-187.654 -4826.192)">
+									<ellipse id="Ellipse_84" data-name="Ellipse 84" cx="1.179" cy="1.179" rx="1.179" ry="1.179" transform="translate(203.794 5008.428) rotate(161.407)" fill="#a95adf"/>
+									<ellipse id="Ellipse_85" data-name="Ellipse 85" cx="1.179" cy="1.179" rx="1.179" ry="1.179" transform="translate(193.428 5012.628) rotate(161.407)" fill="#ff6f47"/>
+									<ellipse id="Ellipse_83" data-name="Ellipse 83" cx="2.829" cy="2.829" rx="2.829" ry="2.829" transform="translate(194.819 5001.465) rotate(161.407)" fill="#00bf8c"/>
+								</g>
+							</svg>
+						</div>
+						<div class="home-page-tele-card special">
+							<div class="home-page-tele-card-wrapper">
+								<div class="home-page-tele-card-left">
+									<a href="/partners/duet-for-genesys/">
+										<img width="198" height="138" src="https://www.bandwidth.com/wp-content/uploads/duet-genesys.svg" alt="">
+									</a>
+								</div>
+								<div class="home-page-tele-card-right">
+									<div class="home-page-tele-card-description">
+										Simplify your enterprise contact center’s move to the cloud while gaining flexibility, scalability, and control.									</div>
+									<div class="home-page-tele-card-link">
+										<a href="/partners/duet-for-genesys/">TELL ME MORE											<svg xmlns="http://www.w3.org/2000/svg" width="23.028" height="19.19" viewBox="0 0 23.028 19.19">
+												<path id="_" data-name="→" d="M0,7.5H17.6L11.317,1.8A4.661,4.661,0,0,1,13.041.39,4.076,4.076,0,0,1,14.945,0l8.083,7.92v3.344l-8.083,7.92a4.364,4.364,0,0,1-1.9-.352,4.924,4.924,0,0,1-1.724-1.478l6.287-5.7H0Z" fill="#069bee"/>
+											</svg>
+										</a>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<div class="home-page-tele-card">
+							<svg class="desktop-tablet" xmlns="http://www.w3.org/2000/svg" width="185.444" height="258.885" viewBox="0 0 185.444 258.885">
+								<g id="Group_7201" data-name="Group 7201" transform="translate(-1555.967 -5041.058)">
+									<g id="Rectangle_1681" data-name="Rectangle 1681" transform="translate(1590.272 5166.913)" fill="#fff" stroke="#707070" stroke-width="1">
+									<rect width="1" height="1" stroke="none"/>
+									<rect x="0.5" y="0.5" fill="none"/>
+									</g>
+									<path id="Rectangle_30" data-name="Rectangle 30" d="M46.675,0H0V250H46.675" transform="translate(1634.957 5295.5) rotate(180)" fill="none" stroke="#079cee" stroke-linecap="round" stroke-width="2" stroke-dasharray="2 8"/>
+									<ellipse id="Ellipse_50" data-name="Ellipse 50" cx="3.507" cy="3.507" rx="3.507" ry="3.507" transform="translate(1582.88 5043.294) rotate(-18.593)" fill="#079cee"/>
+									<ellipse id="Ellipse_86" data-name="Ellipse 86" cx="3.507" cy="3.507" rx="3.507" ry="3.507" transform="translate(1567.554 5043.294) rotate(-18.593)" fill="#a95adf"/>
+									<ellipse id="Ellipse_87" data-name="Ellipse 87" cx="2.032" cy="2.032" rx="2.032" ry="2.032" transform="translate(1555.967 5044.222) rotate(-18.593)" fill="#ff6f47"/>
+									<ellipse id="Ellipse_77" data-name="Ellipse 77" cx="3.507" cy="3.507" rx="3.507" ry="3.507" transform="translate(1582.88 5293.294) rotate(-18.593)" fill="#079cee"/>
+								</g>
+								<g id="Group_7202" data-name="Group 7202" transform="translate(-1555.967 -5057.176)">
+									<circle id="Ellipse_80" data-name="Ellipse 80" cx="5.159" cy="5.159" r="5.159" transform="translate(1692.963 5176.303) rotate(161.407)" fill="#079cee"/>
+									<circle id="Ellipse_82" data-name="Ellipse 82" cx="4.546" cy="4.546" r="4.546" transform="translate(1741.411 5166.794) rotate(161.407)" fill="#a95adf"/>
+									<circle id="Ellipse_81" data-name="Ellipse 81" cx="8.116" cy="8.116" r="8.116" transform="translate(1728.454 5209.561) rotate(161.407)" fill="#ff6f47"/>
+								</g>
+							</svg>
+
+							<svg class="mobile" xmlns="http://www.w3.org/2000/svg" width="70.089" height="323.958" viewBox="0 0 70.089 323.958">
+								<g id="Group_6829" data-name="Group 6829" transform="translate(37.671 148.066) rotate(180)">
+									<path id="Rectangle_30" data-name="Rectangle 30" d="M22.259,0H0V320.715H22.259" transform="translate(0 -174.893)" fill="none" stroke="#079cee" stroke-linecap="round" stroke-width="2" stroke-dasharray="2 8"/>
+									<ellipse id="Ellipse_50" data-name="Ellipse 50" cx="1.673" cy="1.673" rx="1.673" ry="1.673" transform="translate(24.836 146.999) rotate(161.407)" fill="#079cee"/>
+									<ellipse id="Ellipse_86" data-name="Ellipse 86" cx="1.673" cy="1.673" rx="1.673" ry="1.673" transform="translate(32.145 146.999) rotate(161.407)" fill="#a95adf"/>
+									<ellipse id="Ellipse_87" data-name="Ellipse 87" cx="0.969" cy="0.969" rx="0.969" ry="0.969" transform="translate(37.671 146.557) rotate(161.407)" fill="#ff6f47"/>
+								</g>
+								<g id="Group_6825" data-name="Group 6825" transform="translate(-307.432 -4738.506)">
+									<ellipse id="Ellipse_80" data-name="Ellipse 80" cx="1.628" cy="1.628" rx="1.628" ry="1.628" transform="translate(362.228 4912.563) rotate(161.407)" fill="#079cee"/>
+									<ellipse id="Ellipse_82" data-name="Ellipse 82" cx="1.435" cy="1.435" rx="1.435" ry="1.435" transform="translate(377.52 4909.562) rotate(161.407)" fill="#a95adf"/>
+									<ellipse id="Ellipse_81" data-name="Ellipse 81" cx="2.562" cy="2.562" rx="2.562" ry="2.562" transform="translate(373.43 4923.062) rotate(161.407)" fill="#ff6f47"/>
+								</g>
+							</svg>
+
+
+						</div>
+					</div>
+				</div>
+			</div>
+	</section><!-- .home-page-tele -->
+	
+
+	<!-- Callouts -->
+	<section class="home-page-callouts">
+
+		<svg class="home-page-callouts-top-wave" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1920 550">
+			<defs>
+				<clipPath id="clip-path">
+				<rect id="Rectangle_1735" data-name="Rectangle 1735" transform="translate(-4863 -3800)" fill="#1c0a14"/>
+				</clipPath>
+			</defs>
+			<g id="Mask_Group_3" data-name="Mask Group 3" transform="translate(4863 3800)">
+				<g id="Group_6771" data-name="Group 6771">
+				<path id="Vector_36" data-name="Vector 36" d="M2266.962,2403.108c59.81-123.494,108.541-413.966-175.019-587.906-354.45-217.425-608.718-209.081-897.751-166.256s-942.6,88.98-1127.483-331.979c0,1047.068-443.35,957.945,0,1352.834s1773.4,226.721,1773.4,226.721Z" transform="matrix(0.995, -0.105, 0.105, 0.995, -5238.055, -4985.316)" fill="#e6f5fd"/>
+				<path id="Vector_36-2" data-name="Vector 36" d="M2078,2418.706c55.1-125.267,99.985-419.911-161.224-596.349-326.511-220.547-560.738-212.083-826.988-168.644S225.143,1745.006,54.835,1318c0,1062.1-412.062,970.669-3.658,1371.229s1633.616,229.977,1633.616,229.977Z" transform="translate(-4914.835 -5118)" fill="#F5FBFE"/>
+				</g>
+			</g>
+		</svg>
+		<div class="home-page-callouts-wrapper">
+			<div class="home-page-callouts-content">
+				<div class="home-page-callouts-anim">
+											<img width="1007" height="768" src="https://www.bandwidth.com/wp-content/uploads/callouts-section-home-page.svg" alt="">
+									</div>
+				<div class="home-page-callouts-copy">
+											<h2>Our parents think <br> we’re special, but don’t <br> take their word for it </h2>
+																<p class="large-text">Customers and analysts agree! Bandwidth continues to be ranked as a global communications leader.</p>
+									</div>
+			</div>
+		</div>
+	</section><!-- .home-page-callouts -->
+
+	<section class="home-page-testimonials">
+		<div class="home-page-testimonials-wrapper">
+			<div class="home-page-testimonials-card-wrapper">
+																				<figure class="fadein-bottom quote-1">
+							<blockquote>
+								<q class="testimonial-quote-1">Partnering with Bandwidth means that setting up and delivering voice services is a fast, easy, and reliable process.</q>
+							</blockquote>
+							<figcaption>
+								<div class="testimonial-person-image quote-image-1">
+									<img width="100" height="100" src="https://www.bandwidth.com/wp-content/uploads/zoom-person.svg" alt="">
+								</div>
+								<div class="testimonial-copy">
+									<p class="testimonial-name-1">Oded Gal </p>
+									<p class="testimonial-title-1">Chief Product Officer</p>
+									<img width="132" height="29" class="testimonial-logo quote-logo-1" src="https://www.bandwidth.com/wp-content/uploads/zoom-logo.svg" alt="Zoom logo">
+								</div>
+							</figcaption>
+						</figure>
+																	<figure class="fadein-bottom quote-2">
+							<blockquote>
+								<q class="testimonial-quote-2">Without Bandwidth, we wouldn’t have been able to go worldwide so fast.</q>
+							</blockquote>
+							<figcaption>
+								<div class="testimonial-person-image quote-image-2">
+									<img width="100" height="100" src="https://www.bandwidth.com/wp-content/uploads/aircall-person.svg" alt="">
+								</div>
+								<div class="testimonial-copy">
+									<p class="testimonial-name-2">Pierre-Baptiste Béchu</p>
+									<p class="testimonial-title-2">Co-founder and Director of Platform and Infrastructure</p>
+									<img width="123" height="35" class="testimonial-logo quote-logo-2" src="https://www.bandwidth.com/wp-content/uploads/aircall-logo.svg" alt="aircall logo">
+								</div>
+							</figcaption>
+						</figure>
+																	<figure class="fadein-bottom quote-3">
+							<blockquote>
+								<q class="testimonial-quote-3">Their flexible APIs made it simple for us to get up and running without missing a beat.</q>
+							</blockquote>
+							<figcaption>
+								<div class="testimonial-person-image quote-image-3">
+									<img width="100" height="100" src="https://www.bandwidth.com/wp-content/uploads/rover-person-1.png" alt="">
+								</div>
+								<div class="testimonial-copy">
+									<p class="testimonial-name-3">Phillip Kimmey</p>
+									<p class="testimonial-title-3">Co-Founder and Director of Software Development</p>
+									<img width="170" height="60" class="testimonial-logo quote-logo-3" src="https://www.bandwidth.com/wp-content/uploads/rover-1.svg" alt="Rover">
+								</div>
+							</figcaption>
+						</figure>
+																		</div>
+		</div>
+		<svg class="dots-bottom" xmlns="http://www.w3.org/2000/svg" width="83.134" height="129.899" viewBox="0 0 83.134 129.899">
+			<g id="Dots" transform="matrix(0.809, 0.588, -0.588, 0.809, 3061.885, -5834.962)">
+				<circle id="Ellipse_105" data-name="Ellipse 105" cx="13.392" cy="13.392" r="13.392" transform="matrix(0.474, 0.881, -0.881, 0.474, 1060.271, 6527.092)" fill="#ff6f47"/>
+				<circle id="Ellipse_106" data-name="Ellipse 106" cx="7.44" cy="7.44" r="7.44" transform="matrix(0.474, 0.881, -0.881, 0.474, 1007.663, 6482.771)" fill="#00bf8c"/>
+				<circle id="Ellipse_107" data-name="Ellipse 107" cx="7.44" cy="7.44" r="7.44" transform="matrix(0.474, 0.881, -0.881, 0.474, 1033.82, 6603.635)" fill="#079cee"/>
+			</g>
+		</svg>
+
+	</section><!-- .home-page-testimonials -->
+
+</main><!-- .home-page -->
+
+
+	<!-- Footer -->
+	<footer class="footer home-page-footer">
+
+		<!-- Wave -->
+						<svg class="footer-wave-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 100" preserveAspectRatio="none" height="30">
+					<path class="footer-wave-path" d="M851.8,100c125,0,288.3-45,348.2-64V0H0v44c3.7-1,7.3-1.9,11-2.9C80.7,22,151.7,10.8,223.5,6.3C276.7,2.9,330,4,383,9.8 c52.2,5.7,103.3,16.2,153.4,32.8C623.9,71.3,726.8,100,851.8,100z"/>
+				</svg>
+			
+		<!-- Content -->
+		<div class="footer-content">
+
+			<div class="footer-social-row">
+
+				<!-- Logo -->
+				<div class="footer-logo">
+											<a class="footer-logo-link" href="https://www.bandwidth.com/" aria-current="page">
+											<span class="hidden-link-text">Bandwidth</span>
+						<svg class="footer-logo-svg" id="Group" xmlns="http://www.w3.org/2000/svg" width="214.706" height="45.392" viewBox="0 0 214.706 45.392">
+							<path class="footer-logo-path text" id="Vector" d="M127.072,22.954a8.182,8.182,0,0,1-4.565,1.522,6.6,6.6,0,0,1-5.073-2.029,6.879,6.879,0,0,1-2.029-5.2,6.524,6.524,0,0,1,6.848-6.848,8.549,8.549,0,0,1,4.946,1.649V22.954Zm0-13.062A11.793,11.793,0,0,0,122,8.5a8.411,8.411,0,0,0-6.214,2.536,8.6,8.6,0,0,0-2.41,6.341,8.913,8.913,0,0,0,2.536,6.341,7.956,7.956,0,0,0,6.214,2.536A8.365,8.365,0,0,0,127.2,24.6V26h1.9V0h-2.029Zm-57.2,13.062a8.182,8.182,0,0,1-4.565,1.522,6.6,6.6,0,0,1-5.073-2.029,6.879,6.879,0,0,1-2.029-5.2A6.524,6.524,0,0,1,65.058,10.4,8.549,8.549,0,0,1,70,12.048V22.954Zm0-13.062A11.793,11.793,0,0,0,64.8,8.5a8.411,8.411,0,0,0-6.214,2.536,8.6,8.6,0,0,0-2.41,6.341,8.913,8.913,0,0,0,2.536,6.341,7.956,7.956,0,0,0,6.214,2.536A8.365,8.365,0,0,0,70,24.6V26h1.9V0H70V9.892Zm69.5,13.823a8.716,8.716,0,0,1-.38-3.17V10.4h4.819V8.877h-4.819V3.17s-1.775,0-1.775,2.41v3.3h-4.565V10.4h4.565V22.7a3.276,3.276,0,0,0,1.141,2.663,4.178,4.178,0,0,0,2.79,1.015,7.727,7.727,0,0,0,3.551-.888V23.715a8.616,8.616,0,0,1-3.17.888C140.261,24.476,139.627,24.222,139.374,23.715Zm-42.484-.507c-.254.888-.507,1.268-.634,1.268a2.562,2.562,0,0,1-.634-1.268L91.69,11.287c-.634-2.029-1.649-2.41-2.283-2.41s-1.649.38-2.283,2.41L83.193,23.208a4.9,4.9,0,0,1-.634,1.268,2.562,2.562,0,0,1-.634-1.268L77.486,8.877H75.711l4.565,14.838c.634,2.029,1.649,2.536,2.283,2.536s1.649-.38,2.283-2.41l3.931-11.921a4.9,4.9,0,0,1,.634-1.268,2.562,2.562,0,0,1,.634,1.268l3.931,11.921c.634,2.029,1.649,2.41,2.283,2.41s1.649-.507,2.283-2.536L103.1,8.877h-1.775Zm-67.468-.634A6.9,6.9,0,0,1,24.6,24.73a3.656,3.656,0,0,1-2.41-.761,2.647,2.647,0,0,1-1.015-2.029,3.919,3.919,0,0,1,2.283-3.424A11.683,11.683,0,0,1,29.3,17.247v5.326Zm2.283,1.9c-.254,0-.38-.254-.38-.888V13.062a3.923,3.923,0,0,0-1.522-3.3A6.163,6.163,0,0,0,26,8.624a11.436,11.436,0,0,0-5.58,1.775v1.9a9.332,9.332,0,0,1,5.2-2.156c2.536,0,3.8,1.141,3.8,3.551v2.156c-3.17.127-5.707.761-7.355,1.9a4.766,4.766,0,0,0-2.536,4.439,4.051,4.051,0,0,0,1.4,3.044,4.491,4.491,0,0,0,3.3,1.268,8.716,8.716,0,0,0,5.326-2.156A6.222,6.222,0,0,0,29.929,26c.127.254.38.38.888.38h.127a6.9,6.9,0,0,0,3.424-.888V23.715A18.121,18.121,0,0,1,31.7,24.476ZM161.44,10.4a5.933,5.933,0,0,0-4.692-1.9,6.852,6.852,0,0,0-5.707,3.3h-.127V0h-1.775V25.871h1.775V13.95c1.522-2.41,3.424-3.678,5.58-3.678,3.17,0,4.692,2.029,4.692,5.96V26h1.775V15.6A6.294,6.294,0,0,0,161.44,10.4ZM106.781,3.17h1.9V0h-1.9Zm0,22.827h1.9V8.877h-1.9ZM45.655,8.5a6.852,6.852,0,0,0-5.707,3.3h-.127V8.877H38.046V26h1.775V14.077c1.522-2.41,3.3-3.678,5.58-3.678,3.17,0,4.692,2.029,4.692,5.96v9.765h1.775v-10.4a7.589,7.589,0,0,0-1.775-5.2C49.206,9.131,47.684,8.5,45.655,8.5ZM11.54,22.32a7.559,7.559,0,0,1-5.453,2.156A12.175,12.175,0,0,1,1.9,23.715V13.443c1.9-2.156,3.931-3.3,5.96-3.3a5.237,5.237,0,0,1,4.185,1.9A7.077,7.077,0,0,1,13.7,16.994,7.265,7.265,0,0,1,11.54,22.32ZM7.99,8.5a8.516,8.516,0,0,0-6.214,2.79V0H0V24.983a15.88,15.88,0,0,0,6.087,1.268,9.808,9.808,0,0,0,6.975-2.536,9.074,9.074,0,0,0,2.663-6.848,8.587,8.587,0,0,0-2.156-5.96A7.124,7.124,0,0,0,7.99,8.5Z" transform="translate(51.689 7.761)" fill="#079cee"/>
+							<path class="footer-logo-path icon" id="Vector-2" data-name="Vector" d="M30.89,11.312c-1.649-.38-1.775.507-1.141,2.029,3.551,7.99.38,15.726-3.044,17.628a2.231,2.231,0,0,0-.127-.761c-.38-3.8-1.9-7.1-2.79-7.1-.761,0-.254,3.17-.507,6.087-1.268-.761-2.029-1.268-3.424-1.015-1.9.38-4.565,4.439-4.565,3.8-.761-4.819,1.141-12.048,3.678-12.809.38-.127,1.141.507,2.663,1.015,1.268.507,1.015-.761.507-1.141a5.684,5.684,0,0,0-6.214-.38c-3.931,1.9-5.58,10.4-3.551,13.95a5.523,5.523,0,0,0,3.931,2.663c2.536.254,3.424-.254,5.453-2.79A2.137,2.137,0,0,0,22.774,33c-1.649,5.326-8.116,9.765-9.511,9-6.721-4.565-4.819-19.023-.127-31.831a63.886,63.886,0,0,0,2.283-7.1c.634-3.424-3.678-4.058-6.595-1.522C6.668,3.323,4.639,7.634,2.864,12.58-2.59,28.306-.18,41.622,9.458,44.539c11.16,3.3,16.36-3.551,17.247-10.526a10.25,10.25,0,0,0,2.029.127c3.424-.127,8.37-1.9,9.765-9.385C39.641,18.794,35.963,12.2,30.89,11.312Z" transform="translate(0 0)" fill="#079cee"/>
+						</svg>
+
+					</a>
+				</div>
+
+				<!-- Social Links -->
+			<div class="footer-social-links">
+
+				<!-- LinkedIn Link -->
+								<a class="footer-social-link linkedin" href="https://www.linkedin.com/company/bandwidth-inc/" target="_blank" rel="noopener">
+					<span class="hidden-link-text">Linkedin</span>
+					<svg class="footer-social-icon-svg linkedin" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 30" height="26" width="26">
+							<path class="footer-social-icon-path" d="M9,25H4V10h5V25z M6.501,8C5.118,8,4,6.879,4,5.499S5.12,3,6.501,3C7.879,3,9,4.121,9,5.499C9,6.879,7.879,8,6.501,8z M27,25h-4.807v-7.3c0-1.741-0.033-3.98-2.499-3.98c-2.503,0-2.888,1.896-2.888,3.854V25H12V9.989h4.614v2.051h0.065 c0.642-1.18,2.211-2.424,4.551-2.424c4.87,0,5.77,3.109,5.77,7.151C27,16.767,27,25,27,25z"/>
+					</svg>
+				</a>
+
+				<!-- Twitter Link -->
+								<a class="footer-social-link twitter" href="https://twitter.com/bandwidth" target="_blank" rel="noopener">
+					<span class="hidden-link-text">Twitter</span>
+					<svg class="footer-social-icon-svg twitter" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 26 26" height="28" width="28">
+							<path class="footer-social-icon-path" d="M 25.855469 5.574219 C 24.914063 5.992188 23.902344 6.273438 22.839844 6.402344 C 23.921875 5.75 24.757813 4.722656 25.148438 3.496094 C 24.132813 4.097656 23.007813 4.535156 21.8125 4.769531 C 20.855469 3.75 19.492188 3.113281 17.980469 3.113281 C 15.082031 3.113281 12.730469 5.464844 12.730469 8.363281 C 12.730469 8.773438 12.777344 9.175781 12.867188 9.558594 C 8.503906 9.339844 4.636719 7.246094 2.046875 4.070313 C 1.59375 4.847656 1.335938 5.75 1.335938 6.714844 C 1.335938 8.535156 2.261719 10.140625 3.671875 11.082031 C 2.808594 11.054688 2 10.820313 1.292969 10.425781 C 1.292969 10.449219 1.292969 10.46875 1.292969 10.492188 C 1.292969 13.035156 3.101563 15.15625 5.503906 15.640625 C 5.0625 15.761719 4.601563 15.824219 4.121094 15.824219 C 3.78125 15.824219 3.453125 15.792969 3.132813 15.730469 C 3.800781 17.8125 5.738281 19.335938 8.035156 19.375 C 6.242188 20.785156 3.976563 21.621094 1.515625 21.621094 C 1.089844 21.621094 0.675781 21.597656 0.265625 21.550781 C 2.585938 23.039063 5.347656 23.90625 8.3125 23.90625 C 17.96875 23.90625 23.25 15.90625 23.25 8.972656 C 23.25 8.742188 23.246094 8.515625 23.234375 8.289063 C 24.261719 7.554688 25.152344 6.628906 25.855469 5.574219 "/>
+					</svg>
+				</a>
+
+				<!-- YouTube Link -->
+								<a class="footer-social-link youtube" href="https://www.youtube.com/user/bandwidth" target="_blank" rel="noopener">
+					<span class="hidden-link-text">Youtube</span>
+					<svg class="footer-social-icon-svg youtube" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 30" height="24" width="24">
+							<path class="footer-social-icon-path" d="M 15 4 C 10.814 4 5.3808594 5.0488281 5.3808594 5.0488281 L 5.3671875 5.0644531 C 3.4606632 5.3693645 2 7.0076245 2 9 L 2 15 L 2 15.001953 L 2 21 L 2 21.001953 A 4 4 0 0 0 5.3769531 24.945312 L 5.3808594 24.951172 C 5.3808594 24.951172 10.814 26.001953 15 26.001953 C 19.186 26.001953 24.619141 24.951172 24.619141 24.951172 L 24.621094 24.949219 A 4 4 0 0 0 28 21.001953 L 28 21 L 28 15.001953 L 28 15 L 28 9 A 4 4 0 0 0 24.623047 5.0546875 L 24.619141 5.0488281 C 24.619141 5.0488281 19.186 4 15 4 z M 12 10.398438 L 20 15 L 12 19.601562 L 12 10.398438 z"/>
+					</svg>
+				</a>
+
+				<!-- GitHub Link -->
+								<a class="footer-social-link github" href="https://github.com/bandwidth/" target="_blank" rel="noopener">
+					<span class="hidden-link-text">Github</span>
+					<svg class="footer-social-icon-svg github" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" height="34" width="34">
+							<path class="footer-social-icon-path" d="M 16 4 C 9.371094 4 4 9.371094 4 16 C 4 21.300781 7.4375 25.800781 12.207031 27.386719 C 12.808594 27.496094 13.027344 27.128906 13.027344 26.808594 C 13.027344 26.523438 13.015625 25.769531 13.011719 24.769531 C 9.671875 25.492188 8.96875 23.160156 8.96875 23.160156 C 8.421875 21.773438 7.636719 21.402344 7.636719 21.402344 C 6.546875 20.660156 7.71875 20.675781 7.71875 20.675781 C 8.921875 20.761719 9.554688 21.910156 9.554688 21.910156 C 10.625 23.746094 12.363281 23.214844 13.046875 22.910156 C 13.15625 22.132813 13.46875 21.605469 13.808594 21.304688 C 11.144531 21.003906 8.34375 19.972656 8.34375 15.375 C 8.34375 14.0625 8.8125 12.992188 9.578125 12.152344 C 9.457031 11.851563 9.042969 10.628906 9.695313 8.976563 C 9.695313 8.976563 10.703125 8.65625 12.996094 10.207031 C 13.953125 9.941406 14.980469 9.808594 16 9.804688 C 17.019531 9.808594 18.046875 9.941406 19.003906 10.207031 C 21.296875 8.65625 22.300781 8.976563 22.300781 8.976563 C 22.957031 10.628906 22.546875 11.851563 22.421875 12.152344 C 23.191406 12.992188 23.652344 14.0625 23.652344 15.375 C 23.652344 19.984375 20.847656 20.996094 18.175781 21.296875 C 18.605469 21.664063 18.988281 22.398438 18.988281 23.515625 C 18.988281 25.121094 18.976563 26.414063 18.976563 26.808594 C 18.976563 27.128906 19.191406 27.503906 19.800781 27.386719 C 24.566406 25.796875 28 21.300781 28 16 C 28 9.371094 22.628906 4 16 4 Z "/>
+					</svg>
+				</a>
+
+				</div><!-- .footer-social-links -->
+
+			</div>
+
+			<!-- First Column -->
+			<div class="footer-content-column">
+
+
+				<!-- First Footer Menu -->
+									<div class="footer-menu">
+													<h2 class="footer-menu-name">
+								Get Started							</h2>
+												<ul id="menu-get-started" class="footer-menu-list"><li id="menu-item-173730" class="menu-item menu-item-type-post_type menu-item-object-product menu-item-173730"><a href="https://www.bandwidth.com/voice/">Voice</a></li>
+<li id="menu-item-173728" class="menu-item menu-item-type-post_type menu-item-object-product menu-item-173728"><a href="https://www.bandwidth.com/messaging/">Messaging API</a></li>
+<li id="menu-item-173727" class="menu-item menu-item-type-post_type menu-item-object-product menu-item-173727"><a href="https://www.bandwidth.com/911/">Enterprise 911</a></li>
+<li id="menu-item-173729" class="menu-item menu-item-type-post_type menu-item-object-product menu-item-173729"><a href="https://www.bandwidth.com/phone-numbers/">Phone Number Management</a></li>
+<li id="menu-item-167407" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-167407"><a target="_blank" rel="noopener" href="/free-trial/">Try the APIs</a></li>
+</ul>					</div>
+				
+			</div><!-- .footer-content-column -->
+
+			<!-- Second Column -->
+			<div class="footer-content-column">
+
+				<!-- Second Footer Menu -->
+									<div class="footer-menu">
+													<h2 class="footer-menu-name">
+								Company							</h2>
+												<ul id="menu-company" class="footer-menu-list"><li id="menu-item-186645" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-186645"><a href="https://www.bandwidth.com/company/">About Us</a></li>
+<li id="menu-item-167408" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-167408"><a href="https://www.bandwidth.com/contact/">Contact</a></li>
+<li id="menu-item-192692" class="menu-item menu-item-type-post_type_archive menu-item-object-newsroom menu-item-192692"><a href="https://www.bandwidth.com/newsroom/">Newsroom</a></li>
+<li id="menu-item-171917" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-171917"><a href="https://www.bandwidth.com/careers/">Careers</a></li>
+<li id="menu-item-167411" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-167411"><a target="_blank" rel="noopener nofollow" href="https://investors.bandwidth.com/">Investor Relations</a></li>
+<li id="menu-item-170600" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-170600"><a href="https://www.bandwidth.com/leadership/">Leadership</a></li>
+</ul>					</div>
+				
+				<!-- Third Footer Menu -->
+									<div class="footer-menu">
+													<h2 class="footer-menu-name">
+								Legal							</h2>
+												<ul id="menu-legal" class="footer-menu-list"><li id="menu-item-170433" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-170433"><a href="https://www.bandwidth.com/legal/">General</a></li>
+<li id="menu-item-170435" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-170435"><a href="https://www.bandwidth.com/legal/law-enforcement-guide/">Law Enforcement Guide</a></li>
+<li id="menu-item-170434" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-privacy-policy menu-item-170434"><a href="https://www.bandwidth.com/privacy/">Privacy Notice</a></li>
+<li id="menu-item-170436" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-170436"><a href="https://www.bandwidth.com/legal/report-a-phone-number/">Report a Phone Number</a></li>
+<li id="menu-item-179115" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-179115"><a href="https://www.bandwidth.com/privacy/#cookies-and-other-technologies">Cookie Notice</a></li>
+<li id="menu-item-178960" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-178960"><a href="https://www.bandwidth.com/legal/terms-of-use-bandwidthcom-web-sites/">Terms of Use</a></li>
+</ul>					</div>
+				
+			</div><!-- .footer-content-column -->
+
+			<!-- Third Column -->
+			<div class="footer-content-column">
+
+				<!-- Fourth Footer Menu -->
+									<div class="footer-menu">
+													<h2 class="footer-menu-name">
+								Quick Links							</h2>
+												<ul id="menu-quick-links" class="footer-menu-list"><li id="menu-item-168092" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-168092"><a href="https://www.bandwidth.com/support/">Support</a></li>
+<li id="menu-item-167418" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-167418"><a target="_blank" rel="noopener nofollow" href="https://status.bandwidth.com/">Service Status</a></li>
+<li id="menu-item-167419" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-167419"><a href="https://www.bandwidth.com/developers/">Developers</a></li>
+<li id="menu-item-167420" class="menu-item menu-item-type-post_type_archive menu-item-object-resource menu-item-167420"><a href="https://www.bandwidth.com/resources/">Resources</a></li>
+<li id="menu-item-167954" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-167954"><a href="https://www.bandwidth.com/security/">Security</a></li>
+<li id="menu-item-167423" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-167423"><a href="https://www.bandwidth.com/blog/">Blog</a></li>
+<li id="menu-item-167955" class="menu-item menu-item-type-post_type_archive menu-item-object-customer menu-item-167955"><a href="https://www.bandwidth.com/customers/">Customers</a></li>
+<li id="menu-item-191280" class="menu-item menu-item-type-post_type_archive menu-item-object-release-note menu-item-191280"><a href="https://www.bandwidth.com/release-notes/">Release Notes</a></li>
+<li id="menu-item-173731" class="menu-item menu-item-type-post_type_archive menu-item-object-glossary menu-item-173731"><a href="https://www.bandwidth.com/glossary/">Glossary</a></li>
+<li id="menu-item-167426" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-167426"><a href="https://www.bandwidth.com/?page_id=66031">Twilio Alternative</a></li>
+<li id="menu-item-187467" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-187467"><a href="https://www.bandwidth.com/regulations/">Regulations</a></li>
+<li id="menu-item-195023" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-195023"><a href="https://www.bandwidth.com/coverage/">Coverage</a></li>
+</ul>					</div>
+				
+			</div><!-- .footer-content-column -->
+
+			<!-- Fourth Column -->
+			<div class="footer-content-column">
+
+				<!-- First Call to Action -->
+				<div class="footer-call-to-action">
+										<h2 class="footer-call-to-action-title">
+						Let's Chat					</h2>
+										<p class="footer-call-to-action-description">
+						Have a support question? Want to add SMS to your app? Need to talk to legal? Have a great minestrone soup recipe? Whatever the reason you need to chat, let us know and we'll give you a call.					</p>
+																										<a class="footer-call-to-action-button button" href="https://www.bandwidth.com/contact/" target="_self">
+											Get in Touch					</a>
+				</div>
+
+				<!-- Second Call to Action -->
+				<div class="footer-call-to-action">
+										<h2 class="footer-call-to-action-title">
+						Call Us					</h2>
+																				<p class="footer-call-to-action-link-wrapper">
+						<a class="footer-call-to-action-link" href="tel:8008085150" target="_self">
+							(800) 808-5150						</a>
+					</p>
+				</div>
+
+			</div><!-- .footer-content-column -->
+
+		</div><!-- .footer-content -->
+
+		<!-- Copyright -->
+		<div class="footer-copyright">
+			<div class="footer-copyright-wrapper">
+																<p class="footer-copyright-text">
+					<a class="footer-copyright-link" href="https://www.bandwidth.com/tariffs/" target="_self">
+						Bandwidth.com CLEC, LLC is a wholly owned subsidiary of Bandwidth Inc.						&copy2022					</a>
+				</p>
+			</div>
+		</div>
+
+		<div class="lp-footer">
+			<div class="lp-logo-num">
+				<div class="footer-logo">
+											<a class="footer-logo-link" href="https://www.bandwidth.com/" aria-current="page">
+											<span class="hidden-link-text">Bandwidth</span>
+						<svg class="footer-logo-svg" id="Group" xmlns="http://www.w3.org/2000/svg" width="214.706" height="45.392" viewBox="0 0 214.706 45.392">
+							<path class="footer-logo-path text" id="Vector" d="M127.072,22.954a8.182,8.182,0,0,1-4.565,1.522,6.6,6.6,0,0,1-5.073-2.029,6.879,6.879,0,0,1-2.029-5.2,6.524,6.524,0,0,1,6.848-6.848,8.549,8.549,0,0,1,4.946,1.649V22.954Zm0-13.062A11.793,11.793,0,0,0,122,8.5a8.411,8.411,0,0,0-6.214,2.536,8.6,8.6,0,0,0-2.41,6.341,8.913,8.913,0,0,0,2.536,6.341,7.956,7.956,0,0,0,6.214,2.536A8.365,8.365,0,0,0,127.2,24.6V26h1.9V0h-2.029Zm-57.2,13.062a8.182,8.182,0,0,1-4.565,1.522,6.6,6.6,0,0,1-5.073-2.029,6.879,6.879,0,0,1-2.029-5.2A6.524,6.524,0,0,1,65.058,10.4,8.549,8.549,0,0,1,70,12.048V22.954Zm0-13.062A11.793,11.793,0,0,0,64.8,8.5a8.411,8.411,0,0,0-6.214,2.536,8.6,8.6,0,0,0-2.41,6.341,8.913,8.913,0,0,0,2.536,6.341,7.956,7.956,0,0,0,6.214,2.536A8.365,8.365,0,0,0,70,24.6V26h1.9V0H70V9.892Zm69.5,13.823a8.716,8.716,0,0,1-.38-3.17V10.4h4.819V8.877h-4.819V3.17s-1.775,0-1.775,2.41v3.3h-4.565V10.4h4.565V22.7a3.276,3.276,0,0,0,1.141,2.663,4.178,4.178,0,0,0,2.79,1.015,7.727,7.727,0,0,0,3.551-.888V23.715a8.616,8.616,0,0,1-3.17.888C140.261,24.476,139.627,24.222,139.374,23.715Zm-42.484-.507c-.254.888-.507,1.268-.634,1.268a2.562,2.562,0,0,1-.634-1.268L91.69,11.287c-.634-2.029-1.649-2.41-2.283-2.41s-1.649.38-2.283,2.41L83.193,23.208a4.9,4.9,0,0,1-.634,1.268,2.562,2.562,0,0,1-.634-1.268L77.486,8.877H75.711l4.565,14.838c.634,2.029,1.649,2.536,2.283,2.536s1.649-.38,2.283-2.41l3.931-11.921a4.9,4.9,0,0,1,.634-1.268,2.562,2.562,0,0,1,.634,1.268l3.931,11.921c.634,2.029,1.649,2.41,2.283,2.41s1.649-.507,2.283-2.536L103.1,8.877h-1.775Zm-67.468-.634A6.9,6.9,0,0,1,24.6,24.73a3.656,3.656,0,0,1-2.41-.761,2.647,2.647,0,0,1-1.015-2.029,3.919,3.919,0,0,1,2.283-3.424A11.683,11.683,0,0,1,29.3,17.247v5.326Zm2.283,1.9c-.254,0-.38-.254-.38-.888V13.062a3.923,3.923,0,0,0-1.522-3.3A6.163,6.163,0,0,0,26,8.624a11.436,11.436,0,0,0-5.58,1.775v1.9a9.332,9.332,0,0,1,5.2-2.156c2.536,0,3.8,1.141,3.8,3.551v2.156c-3.17.127-5.707.761-7.355,1.9a4.766,4.766,0,0,0-2.536,4.439,4.051,4.051,0,0,0,1.4,3.044,4.491,4.491,0,0,0,3.3,1.268,8.716,8.716,0,0,0,5.326-2.156A6.222,6.222,0,0,0,29.929,26c.127.254.38.38.888.38h.127a6.9,6.9,0,0,0,3.424-.888V23.715A18.121,18.121,0,0,1,31.7,24.476ZM161.44,10.4a5.933,5.933,0,0,0-4.692-1.9,6.852,6.852,0,0,0-5.707,3.3h-.127V0h-1.775V25.871h1.775V13.95c1.522-2.41,3.424-3.678,5.58-3.678,3.17,0,4.692,2.029,4.692,5.96V26h1.775V15.6A6.294,6.294,0,0,0,161.44,10.4ZM106.781,3.17h1.9V0h-1.9Zm0,22.827h1.9V8.877h-1.9ZM45.655,8.5a6.852,6.852,0,0,0-5.707,3.3h-.127V8.877H38.046V26h1.775V14.077c1.522-2.41,3.3-3.678,5.58-3.678,3.17,0,4.692,2.029,4.692,5.96v9.765h1.775v-10.4a7.589,7.589,0,0,0-1.775-5.2C49.206,9.131,47.684,8.5,45.655,8.5ZM11.54,22.32a7.559,7.559,0,0,1-5.453,2.156A12.175,12.175,0,0,1,1.9,23.715V13.443c1.9-2.156,3.931-3.3,5.96-3.3a5.237,5.237,0,0,1,4.185,1.9A7.077,7.077,0,0,1,13.7,16.994,7.265,7.265,0,0,1,11.54,22.32ZM7.99,8.5a8.516,8.516,0,0,0-6.214,2.79V0H0V24.983a15.88,15.88,0,0,0,6.087,1.268,9.808,9.808,0,0,0,6.975-2.536,9.074,9.074,0,0,0,2.663-6.848,8.587,8.587,0,0,0-2.156-5.96A7.124,7.124,0,0,0,7.99,8.5Z" transform="translate(51.689 7.761)" fill="#079cee"/>
+							<path class="footer-logo-path icon" id="Vector-2" data-name="Vector" d="M30.89,11.312c-1.649-.38-1.775.507-1.141,2.029,3.551,7.99.38,15.726-3.044,17.628a2.231,2.231,0,0,0-.127-.761c-.38-3.8-1.9-7.1-2.79-7.1-.761,0-.254,3.17-.507,6.087-1.268-.761-2.029-1.268-3.424-1.015-1.9.38-4.565,4.439-4.565,3.8-.761-4.819,1.141-12.048,3.678-12.809.38-.127,1.141.507,2.663,1.015,1.268.507,1.015-.761.507-1.141a5.684,5.684,0,0,0-6.214-.38c-3.931,1.9-5.58,10.4-3.551,13.95a5.523,5.523,0,0,0,3.931,2.663c2.536.254,3.424-.254,5.453-2.79A2.137,2.137,0,0,0,22.774,33c-1.649,5.326-8.116,9.765-9.511,9-6.721-4.565-4.819-19.023-.127-31.831a63.886,63.886,0,0,0,2.283-7.1c.634-3.424-3.678-4.058-6.595-1.522C6.668,3.323,4.639,7.634,2.864,12.58-2.59,28.306-.18,41.622,9.458,44.539c11.16,3.3,16.36-3.551,17.247-10.526a10.25,10.25,0,0,0,2.029.127c3.424-.127,8.37-1.9,9.765-9.385C39.641,18.794,35.963,12.2,30.89,11.312Z" transform="translate(0 0)" fill="#079cee"/>
+						</svg>
+					</a>
+				</div>
+				<div class="lp-num">
+										<h2 class="footer-call-to-action-title">
+						Call Us					</h2>
+																				<p class="footer-call-to-action-link-wrapper">
+						<a class="footer-call-to-action-link" href="tel:8008085150" target="_self">
+							(800) 808-5150						</a>
+					</p>
+				</div>
+			</div>
+			<div class="lp-copyright">
+				<div class="lp-copyright">
+																				<p class="footer-copyright-text">
+						<a class="footer-copyright-link" href="https://www.bandwidth.com/tariffs/" target="_self">
+							Bandwidth.com CLEC, LLC is a wholly owned subsidiary of Bandwidth Inc.							&copy2022						</a>
+					</p>
+				</div>
+			</div>
+		</div>
+
+	</footer>
+
+	<!-- Sticky Call to Action -->
+			<div id="custom_html-22" class="widget_text widget widget_custom_html"><h3 class="widget_title">Pindrop Integration</h3><div class="textwidget custom-html-widget"><div class="sticky-cta sticky-cta-hide">
+	<div style="background-color:#ff6f47;" class="sticky-cta-toggle">
+		<span class="sticky-cta-toggle-text">Product Release</span>
+	</div>
+	<a class="sticky-cta-link" href="/partners/pindrop-integration">
+		<div class="sticky-cta-content">			<img class="sticky-cta-image" src="https://www.bandwidth.com/wp-content/uploads/bwpindrop-stacked@2x.png" alt="Pindrop Integration" width="120">
+			<p class="large-text" style="margin-bottom: 10px; margin-top: 10px;">Integration with Pindrop available! </p>
+			<p>Help authenticate your callers with a carrier-level integration for Pindrop and your CCaaS platform—only from Bandwidth. </p>
+			<p class="arrow-link">I'm interested</p>
+		</div>
+	</a>
+	<div class="sticky-cta-close">
+		<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewbox="0 0 16 16">
+			<path d="M2.309,0a.888.888,0,0,0-.622.267L.266,1.687a1.066,1.066,0,0,0,0,1.421L5.152,7.994.266,12.88a1.066,1.066,0,0,0,0,1.421l1.421,1.421a1.066,1.066,0,0,0,1.421,0l4.886-4.886,4.886,4.886a1.066,1.066,0,0,0,1.421,0L15.723,14.3a1.066,1.066,0,0,0,0-1.421L10.837,7.994l4.886-4.886a1.066,1.066,0,0,0,0-1.421L14.3.266a1.066,1.066,0,0,0-1.421,0L7.994,5.152,3.109.266A1.244,1.244,0,0,0,2.309,0Z" />
+		</svg>
+	</div>
+</div></div></div>	
+	
+	<!-- Popup -->
+	
+	</div><!-- .site-wrapper -->
+
+	<!-- WordPress Generated Code -->
+	<script type='text/javascript' id='ppress-frontend-script-js-extra'>
+/* <![CDATA[ */
+var pp_ajax_form = {"ajaxurl":"https:\/\/www.bandwidth.com\/wp-admin\/admin-ajax.php","confirm_delete":"Are you sure?","deleting_text":"Deleting...","deleting_error":"An error occurred. Please try again.","nonce":"4cd2c34d71","disable_ajax_form":"false"};
+/* ]]> */
+</script>
+<script type="rocketlazyloadscript" data-rocket-type='text/javascript' src='https://www.bandwidth.com/wp-content/plugins/wp-user-avatar/assets/js/frontend.min.js?ver=3.2.11' id='ppress-frontend-script-js'></script>
+<script type="rocketlazyloadscript" data-rocket-type='text/javascript' id='rocket-browser-checker-js-after'>
+"use strict";var _createClass=function(){function defineProperties(target,props){for(var i=0;i<props.length;i++){var descriptor=props[i];descriptor.enumerable=descriptor.enumerable||!1,descriptor.configurable=!0,"value"in descriptor&&(descriptor.writable=!0),Object.defineProperty(target,descriptor.key,descriptor)}}return function(Constructor,protoProps,staticProps){return protoProps&&defineProperties(Constructor.prototype,protoProps),staticProps&&defineProperties(Constructor,staticProps),Constructor}}();function _classCallCheck(instance,Constructor){if(!(instance instanceof Constructor))throw new TypeError("Cannot call a class as a function")}var RocketBrowserCompatibilityChecker=function(){function RocketBrowserCompatibilityChecker(options){_classCallCheck(this,RocketBrowserCompatibilityChecker),this.passiveSupported=!1,this._checkPassiveOption(this),this.options=!!this.passiveSupported&&options}return _createClass(RocketBrowserCompatibilityChecker,[{key:"_checkPassiveOption",value:function(self){try{var options={get passive(){return!(self.passiveSupported=!0)}};window.addEventListener("test",null,options),window.removeEventListener("test",null,options)}catch(err){self.passiveSupported=!1}}},{key:"initRequestIdleCallback",value:function(){!1 in window&&(window.requestIdleCallback=function(cb){var start=Date.now();return setTimeout(function(){cb({didTimeout:!1,timeRemaining:function(){return Math.max(0,50-(Date.now()-start))}})},1)}),!1 in window&&(window.cancelIdleCallback=function(id){return clearTimeout(id)})}},{key:"isDataSaverModeOn",value:function(){return"connection"in navigator&&!0===navigator.connection.saveData}},{key:"supportsLinkPrefetch",value:function(){var elem=document.createElement("link");return elem.relList&&elem.relList.supports&&elem.relList.supports("prefetch")&&window.IntersectionObserver&&"isIntersecting"in IntersectionObserverEntry.prototype}},{key:"isSlowConnection",value:function(){return"connection"in navigator&&"effectiveType"in navigator.connection&&("2g"===navigator.connection.effectiveType||"slow-2g"===navigator.connection.effectiveType)}}]),RocketBrowserCompatibilityChecker}();
+</script>
+<script type='text/javascript' id='rocket-preload-links-js-extra'>
+/* <![CDATA[ */
+var RocketPreloadLinksConfig = {"excludeUris":"\/forms\/toll-free-campaign-brief\/|\/forms\/verified-sms-registration\/|\/forms\/short-code-campaign-brief\/|\/forms\/local-a2p-program-registration\/|\/forms\/sms-mms-ip-survey\/|\/free-trial\/|\/newsroom\/|\/(?:.+\/)?feed(?:\/(?:.+\/?)?)?$|\/(?:.+\/)?embed\/|\/(index\\.php\/)?wp\\-json(\/.*|$)|\/wp-admin\/|\/logout\/|\/wp-login.php|\/refer\/|\/go\/|\/recommend\/|\/recommends\/","usesTrailingSlash":"1","imageExt":"jpg|jpeg|gif|png|tiff|bmp|webp|avif","fileExt":"jpg|jpeg|gif|png|tiff|bmp|webp|avif|php|pdf|html|htm","siteUrl":"https:\/\/www.bandwidth.com","onHoverDelay":"100","rateThrottle":"3"};
+/* ]]> */
+</script>
+<script type="rocketlazyloadscript" data-rocket-type='text/javascript' id='rocket-preload-links-js-after'>
+(function() {
+"use strict";var r="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(e){return typeof e}:function(e){return e&&"function"==typeof Symbol&&e.constructor===Symbol&&e!==Symbol.prototype?"symbol":typeof e},e=function(){function i(e,t){for(var n=0;n<t.length;n++){var i=t[n];i.enumerable=i.enumerable||!1,i.configurable=!0,"value"in i&&(i.writable=!0),Object.defineProperty(e,i.key,i)}}return function(e,t,n){return t&&i(e.prototype,t),n&&i(e,n),e}}();function i(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}var t=function(){function n(e,t){i(this,n),this.browser=e,this.config=t,this.options=this.browser.options,this.prefetched=new Set,this.eventTime=null,this.threshold=1111,this.numOnHover=0}return e(n,[{key:"init",value:function(){!this.browser.supportsLinkPrefetch()||this.browser.isDataSaverModeOn()||this.browser.isSlowConnection()||(this.regex={excludeUris:RegExp(this.config.excludeUris,"i"),images:RegExp(".("+this.config.imageExt+")$","i"),fileExt:RegExp(".("+this.config.fileExt+")$","i")},this._initListeners(this))}},{key:"_initListeners",value:function(e){-1<this.config.onHoverDelay&&document.addEventListener("mouseover",e.listener.bind(e),e.listenerOptions),document.addEventListener("mousedown",e.listener.bind(e),e.listenerOptions),document.addEventListener("touchstart",e.listener.bind(e),e.listenerOptions)}},{key:"listener",value:function(e){var t=e.target.closest("a"),n=this._prepareUrl(t);if(null!==n)switch(e.type){case"mousedown":case"touchstart":this._addPrefetchLink(n);break;case"mouseover":this._earlyPrefetch(t,n,"mouseout")}}},{key:"_earlyPrefetch",value:function(t,e,n){var i=this,r=setTimeout(function(){if(r=null,0===i.numOnHover)setTimeout(function(){return i.numOnHover=0},1e3);else if(i.numOnHover>i.config.rateThrottle)return;i.numOnHover++,i._addPrefetchLink(e)},this.config.onHoverDelay);t.addEventListener(n,function e(){t.removeEventListener(n,e,{passive:!0}),null!==r&&(clearTimeout(r),r=null)},{passive:!0})}},{key:"_addPrefetchLink",value:function(i){return this.prefetched.add(i.href),new Promise(function(e,t){var n=document.createElement("link");n.rel="prefetch",n.href=i.href,n.onload=e,n.onerror=t,document.head.appendChild(n)}).catch(function(){})}},{key:"_prepareUrl",value:function(e){if(null===e||"object"!==(void 0===e?"undefined":r(e))||!1 in e||-1===["http:","https:"].indexOf(e.protocol))return null;var t=e.href.substring(0,this.config.siteUrl.length),n=this._getPathname(e.href,t),i={original:e.href,protocol:e.protocol,origin:t,pathname:n,href:t+n};return this._isLinkOk(i)?i:null}},{key:"_getPathname",value:function(e,t){var n=t?e.substring(this.config.siteUrl.length):e;return n.startsWith("/")||(n="/"+n),this._shouldAddTrailingSlash(n)?n+"/":n}},{key:"_shouldAddTrailingSlash",value:function(e){return this.config.usesTrailingSlash&&!e.endsWith("/")&&!this.regex.fileExt.test(e)}},{key:"_isLinkOk",value:function(e){return null!==e&&"object"===(void 0===e?"undefined":r(e))&&(!this.prefetched.has(e.href)&&e.origin===this.config.siteUrl&&-1===e.href.indexOf("?")&&-1===e.href.indexOf("#")&&!this.regex.excludeUris.test(e.href)&&!this.regex.images.test(e.href))}}],[{key:"run",value:function(){"undefined"!=typeof RocketPreloadLinksConfig&&new n(new RocketBrowserCompatibilityChecker({capture:!0,passive:!0}),RocketPreloadLinksConfig).init()}}]),n}();t.run();
+}());
+</script>
+<script type="rocketlazyloadscript" data-rocket-type='text/javascript' src='https://www.bandwidth.com/wp-content/themes/bandwidth/js/bandwidth.js?ver=1.0' id='bandwidth-script-js'></script>
+<script type="rocketlazyloadscript" data-rocket-type='text/javascript' src='https://www.bandwidth.com/wp-content/themes/bandwidth/js/cookie-tracking.js?ver=1.0' id='bandwidth-cookie-tracking-js'></script>
+<script type='text/javascript' src='https://www.bandwidth.com/wp-content/themes/bandwidth/inc/intel-input/intlTelInput-jquery.min.js?ver=1.0' id='intlTelInput-js'></script>
+<script type="rocketlazyloadscript" data-rocket-type='text/javascript' src='https://www.bandwidth.com/wp-content/themes/bandwidth/inc/intel-input/utils.js?ver=1.0' id='intlTelInpututils-js'></script>
+<script type='text/javascript' id='gforms_recaptcha_recaptcha-js-extra'>
+/* <![CDATA[ */
+var gforms_recaptcha_recaptcha_strings = {"site_key":"6LcS4UccAAAAABHAS1pvnaa6IxkKe_D_VnQyqE0n","ajaxurl":"https:\/\/www.bandwidth.com\/wp-admin\/admin-ajax.php","nonce":"91107e1a49"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='https://www.google.com/recaptcha/api.js?render=6LcS4UccAAAAABHAS1pvnaa6IxkKe_D_VnQyqE0n&#038;ver=1.1' id='gforms_recaptcha_recaptcha-js'></script>
+<script type='text/javascript' id='gforms_recaptcha_recaptcha-js-after'>
+(function($){grecaptcha.ready(function(){$('.grecaptcha-badge').css('visibility','hidden');});})(jQuery);
+</script>
+
+</body>
+
+</html>
+
+<!-- This website is like a Rocket, isn't it? Performance optimized by WP Rocket. Learn more: https://wp-rocket.me -->
