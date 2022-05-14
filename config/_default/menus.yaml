@@ -10,11 +10,11 @@ main:
   - name: Publications
     url: '#featured'
     weight: 20
-  - name: Projects
-    url: '#projects'
-    weight: 30
   - name: Work Experiences
     url: '#experiences'
+    weight: 30
+  - name: Projects
+    url: '#projects'
     weight: 40
   - name: Resume
     url: uploads/resume.pdf
